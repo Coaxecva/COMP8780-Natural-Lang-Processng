@@ -1,0 +1,548 @@
+
+<!-- saved from url=(0042)https://tartarus.org/martin/PorterStemmer/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Porter Stemming Algorithm</title>
+
+</head>
+
+<body>
+
+<!-- make with m-tohtml PorterStemmer/index -->
+
+<center><h2>The Porter Stemming Algorithm</h2></center>
+<blockquote>
+<br><br>
+<i>This page was completely revised Jan 2006. The earlier edition is <a href="https://tartarus.org/martin/PorterStemmer/index-old.html">here</a>.</i>
+<br><br>
+<!--
+(It has also been
+<A HREF="http://science.webhostinggeeks.com/porter-stemming-algoritam-">translated
+into Serbo-Croat</A> by
+Jovana Milutinovich from
+<A HREF="http://webhostinggeeks.com/">Web Geeks Resources</A>. Thank you, Jovana!)
+<BR><BR>
+-->
+
+<blockquote>
+This is the ‘official’ home page for distribution of the Porter Stemming
+Algorithm, written and maintained by its author,
+<a href="https://tartarus.org/martin/index.html">Martin Porter</a>.
+
+<br><br>
+
+The Porter stemming algorithm (or ‘Porter stemmer’) is a process for removing
+the commoner morphological and inflexional endings from words in English. Its
+main use is as part of a term normalisation process that is usually done when
+setting up Information Retrieval systems.<br><br>
+</blockquote>
+<br><font size="+1"><b>History</b></font><br><br>
+<blockquote>
+The original <a href="https://tartarus.org/martin/PorterStemmer/def.txt">stemming algorithm paper</a> was written in 1979 in the
+Computer Laboratory, Cambridge (England), as part of a larger IR project, and
+appeared as Chapter 6 of the final project report,
+
+<dl><dd>
+C.J. van Rijsbergen, S.E. Robertson and M.F. Porter, 1980. <i>New models in
+probabilistic information retrieval.</i> London: British Library. (British
+Library Research and Development Report, no. 5587).
+</dd></dl>
+
+With van Rijsbergen’s encouragement, it was also published in,
+<dl><dd>
+M.F. Porter, 1980, An algorithm
+for suffix stripping, <i>Program</i>, <b>14</b>(3) pp 130−137.
+</dd></dl>
+
+And since then it has
+been reprinted in
+<dl><dd>
+Karen Sparck Jones and Peter Willet, 1997, <i>Readings in
+Information Retrieval</i>, San Francisco: Morgan Kaufmann, ISBN
+1-55860-454-4.
+</dd></dl>
+
+The original stemmer was written in
+<a href="http://www.cl.cam.ac.uk/users/mr/BCPL.html">BCPL</a>,
+a language once popular, but now defunct. For the first few years after 1980 it
+was distributed in its BCPL form, via the medium of punched paper
+tape. Versions in other languages soon began to appear, and by 1999 it
+was being widely used, quoted and adapted. Unfortunately there were numerous
+variations in functionality among these versions, and this web page was set up
+primarily to ‘put the record straight’ and establish a definitive version for
+distribution.
+<br><br>
+</blockquote>
+<br><font size="+1"><b>Encodings</b></font><br><br>
+<blockquote>
+The ANSI C version that heads the table below is exactly equivalent to the original
+BCPL version. The BCPL version did, however, differ in three minor points from
+the published algorithm and these are clearly marked in the downloadable ANSI C version.
+They are discussed further below.
+
+<br><br>
+
+This ANSI C version may be regarded as definitive, in that it
+now acts as a better definition
+of the algorithm than the original published paper.<br><br>
+
+
+Over the years, I have received many encoding from other workers, and they
+are also presented below. I have a reasonable confidence that all these versions
+are correctly encoded.
+<br><br><br><br>
+</blockquote></blockquote>
+<table align="CENTER" bgcolor="#E8E8E8" style="padding: 12px">
+
+<tbody><tr valign="TOP"><td>  <b><i>language</i></b>
+&nbsp;&nbsp;&nbsp;</td><td>  <b><i>author</i></b>
+&nbsp;&nbsp;&nbsp;</td><td>  <b><i>affiliation</i></b>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> <b><i>received</i></b>
+&nbsp;&nbsp;&nbsp;</td><td>  <b><i>notes</i></b>
+
+</td></tr><tr valign="TOP"><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/c.txt">ANSI C</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:martin@tartarus.org">me</a>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/c_thread_safe.txt">ANSI C</a> <font size="-1">thread safe</font>
+&nbsp;&nbsp;&nbsp;</td><td>  me
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/java.txt">java</a>
+&nbsp;&nbsp;&nbsp;</td><td>  me
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/perl.txt">Perl</a>
+&nbsp;&nbsp;&nbsp;</td><td>  me
+
+</td></tr><tr valign="TOP"><td>  <a href="http://www.ldc.usb.ve/~vdaniel/porter.pm">Perl</a>
+&nbsp;&nbsp;&nbsp;</td><td>  Daniel van Balen
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Oct 1999
+&nbsp;&nbsp;&nbsp;</td><td>  <font size="-1">slightly faster?</font>
+
+</td></tr><tr valign="TOP"><td> <a href="https://tartarus.org/martin/PorterStemmer/python.txt">python</a>
+&nbsp;&nbsp;&nbsp;</td><td> <a href="mailto:vivake@omniscia.org">Vivake Gupta</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Jan 2001
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/csharp.txt">Csharp</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:ahazelwood@mindspring.com">André Hazelwood</a>
+&nbsp;&nbsp;&nbsp;</td><td>  The Official Web Guide
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Sep 2001
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/csharp2.txt">Csharp</a> <font size="-1">.NET compliant</font>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:azzo-ci0@wpmail.paisley.ac.uk">Leif Azzopardi</a>
+&nbsp;&nbsp;&nbsp;</td><td>  Univerity of Paisley, Scotland
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Nov 2002
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/csharp3.txt">Csharp</a> <font size="-1">again!</font>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:ratborg@gmail.com">Brad Patton</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://ratborg.blogspot.com/">ratborg.blogspot.com</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Dec 2015
+&nbsp;&nbsp;&nbsp;</td><td>  <font size="-1">"more like standard<br>
+       C# code" (Brad)</font>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/commonlisp.txt">Common Lisp</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:smh@franz.com">Steven M. Haflich</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.franz.com/">Franz Inc</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Mar 2002
+&nbsp;&nbsp;&nbsp;</td><td>
+
+<!--
+
+<TR VALIGN=TOP><TD>  <A HREF="ruby.txt">Ruby</A>
+&nbsp;&nbsp;&nbsp;<TD>  <A HREF="mailto:raypereda@hotmail.com">Ray Pereda</A>
+&nbsp;&nbsp;&nbsp;<TD>  <A HREF="http://www.isri.unlv.edu">ISRI, University of Nevada</A>
+&nbsp;&nbsp;&nbsp;<TD ALIGN=RIGHT>  Jan 2003
+&nbsp;&nbsp;&nbsp;<TD>  <FONT SIZE=-1>submitted by <A HREF="mailto:condit@isri.unlv.edu">Allen Condit</A><BR>
+    further improvements by<BR><A HREF="mailto:dave@pragprom.com">Dave Thomas</A></FONT>
+
+-->
+
+</td></tr><tr valign="TOP"><td>  Ruby
+&nbsp;&nbsp;&nbsp;</td><td>  Ray Pereda
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.raypereda.com/">www.raypereda.com</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Jan 2003
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="https://github.com/raypereda/stemmify">github link</a>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/vb.txt">Visual Basic</a> <font size="-1">VB6</font>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:Navonil.Mustafee@brunel.ac.uk">Navonil Mustafee</a>
+&nbsp;&nbsp;&nbsp;</td><td>  Brunel University
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Apr 2003
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/delphi.txt">Delphi</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:jo.rabin@btclick.com">Jo Rabin</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Apr 2004
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/js.txt">Javascript</a>
+&nbsp;&nbsp;&nbsp;</td><td>  ‘Andargor’
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.andargor.com/">www.andargor.com</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Jul 2004
+&nbsp;&nbsp;&nbsp;</td><td>  <font size="-1">substantial revisions by<br><a href="mailto:cmckenzie@iizuu.com">Christopher McKenzie</a><sup><font size="-1">
+<!--
+    <BR>(See &#x2018;Links&#x2019; below.)
+--></font>
+</sup></font></td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/vbnet.txt">Visual Basic</a><br><font size="-1">VB7; .NET compliant</font>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:christos.attikos@gmail.com">Christos Attikos</a>
+&nbsp;&nbsp;&nbsp;</td><td>  University of Piraeus, Greece
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Jan 2005
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/php.txt">php</a>
+&nbsp;&nbsp;&nbsp;</td><td>  Richard Heyes
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.phpguru.org/">www.phpguru.org</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Feb 2005
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/prolog.txt">Prolog</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:philip.brooks@gmail.com">Philip Brooks</a>
+&nbsp;&nbsp;&nbsp;</td><td>  University of Georgia
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Oct 2005
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/haskell.txt">Haskell</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:lomeo@mail.ru">Dmitry Antonyuk</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Nov 2005
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/tsql.txt">T-SQL</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:klubell@atelierdevitraux.com">Keith Lubell</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.atelierdevitraux.com/">www.atelierdevitraux.com</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  May 2006
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/matlab.txt">matlab</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:LopezJC@cpmcri.org">Juan Carlos Lopez</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.cpmc.org/professionals/research/">California Pacific Medical Center<br>Research Institute</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Sep 2006
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/tcl.txt">Tcl</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:artheo@iit.demokritos.gr">Aris Theodorakos</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.demokritos.gr/index_muk.asp">NCSR Demokritos</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT">  Nov 2006
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/d.txt">D</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:Daniel-ps@hence22.org">Daniel Truemper</a>
+&nbsp;&nbsp;&nbsp;</td><td>  Humboldt-Universitaet zu Berlin
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> May 2007
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/porter.erl">erlang (1)</a>  <a href="https://tartarus.org/martin/PorterStemmer/conditions.erl">erlang (2)</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:alden.dima@nist.gov">Alden Dima</a>
+&nbsp;&nbsp;&nbsp;</td><td>  National Institute of Standards and<br>Technology, Gaithersburg, MD USA
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Sep 2007
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/rebol.txt">REBOL</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:daleb@digital-bear.com">Dale K Brearcliffe</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Apr 2009
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/scala.txt">Scala</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:ken.faulkner@gmail.com">Ken Faulkner</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> May 2009
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/sas.txt">sas</a>
+&nbsp;&nbsp;&nbsp;</td><td>  Antoine St-Pierre
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.businessresearchers.com/">Business Researchers, Inc</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Apr 2010
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/vim.txt">plugin vim script</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:mitchellbowden@gmail.com">Mitchell Bowden</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> May 2010
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://github.com/msbmsb/porter-stem.vim">github link</a>
+
+</td></tr><tr valign="TOP"><td>  node.js
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:jedp@jedparsons.com">Jed Parsons</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://jedparsons.com/">jedparsons.com</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> May 2011
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="https://github.com/jedp/porter-stemmer">github link</a>
+
+</td></tr><tr valign="TOP"><td>  Google Go
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:agonopol@gmail.com">Alex Gonopolskiy</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Oct 2011
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="https://github.com/agonopol/go-stem">github link</a>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/awk.txt">awk</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:gregory.grefenstette@3ds.com">Gregory Grefenstette</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.3ds.com/products/exalead">3ds.com/exalead</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Jul 2012
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="https://bitbucket.org/m00nlight/clojure-stemmer">clojure</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:dot.wangyushi@gmail.com">Yushi Wang</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Mar 2013
+&nbsp;&nbsp;&nbsp;</td><td>  bitbucket link
+
+</td></tr><tr valign="TOP"><td>  <a href="http://github.com/mrordinaire/rust-stem">Rust</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:m@minhdo.org">Do Nhat Minh</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.ntu.edu.sg/Pages/index.aspx">Nanyang Technological University</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Aug 2013
+&nbsp;&nbsp;&nbsp;</td><td>  github link
+
+</td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/vala.txt">vala</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:serge.hulne@gmail.com">Serge Hulne</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Sep 2013
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td>  <a href="http://github.com/johnpcarty/mysql-porter-stemmer">MySQL</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:cartyjp@hotmail.com">John Carty</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.enlightenjobs.com/">Enlighten Jobs</a>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Jan 2015
+&nbsp;&nbsp;&nbsp;</td><td>  github link
+
+</td></tr><tr valign="TOP"><td>  <a href="https://github.com/mguzmann/CorpusTools/blob/master/src/PortStemmer.jl">Julia</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:mortem.dei@gmail.com">Matías Guzmán Naranjo</a>
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> May 2015
+&nbsp;&nbsp;&nbsp;</td><td>  github link
+
+</td></tr><tr valign="TOP"><td>  <a href="http://www.cs.ubbcluj.ro/~zbodo/soft/porter.flex">flex</a>
+&nbsp;&nbsp;&nbsp;</td><td>  Zalán Bodó
+&nbsp;&nbsp;&nbsp;</td><td>  Babes-Bolyai University
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Oct 2015
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="http://www.cs.ubbcluj.ro/~zbodo/porter_flex.html">(Zalan’s notes)
+
+<!-- zalan confirmed in an email of 31/10/15 that this is BSD
+     licensed. I've copied his sources to flex.txt and flex.htm -->
+
+</a></td></tr><tr valign="TOP"><td>  <a href="https://tartarus.org/martin/PorterStemmer/R.txt">R</a>
+&nbsp;&nbsp;&nbsp;</td><td>  <a href="mailto:mohitmakkar02@gmail.com">Mohit Makkar</a>
+&nbsp;&nbsp;&nbsp;</td><td>  Indian Institute of Technology, Delhi
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> Nov 2015
+&nbsp;&nbsp;&nbsp;</td><td>
+
+</td></tr><tr valign="TOP"><td> <a href="https://github.com/DDave87/codePractice/blob/master/PorterStemmer.groovy">Groovy</a>
+&nbsp;&nbsp;&nbsp;</td><td> Dhaval Dave
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> June 2016
+&nbsp;&nbsp;&nbsp;</td><td>  github link
+
+</td></tr><tr valign="TOP"><td> <a href="http://ooporter.sourceforge.net/">ooRexx</a>
+&nbsp;&nbsp;&nbsp;</td><td> P.O. Jonsson
+&nbsp;&nbsp;&nbsp;</td><td>
+&nbsp;&nbsp;&nbsp;</td><td align="RIGHT"> July 2016
+&nbsp;&nbsp;&nbsp;</td><td>  sourceforge link
+</td></tr></tbody></table>
+<br><br>
+<blockquote><blockquote>
+
+All these encodings of the algorithm can be used free of charge for any
+purpose. Questions about the algorithms should be directed to their authors,
+and not to Martin Porter (except when he is the author).
+<br><br>
+
+To test the programs out,
+
+here is a <b><a href="https://tartarus.org/martin/PorterStemmer/voc.txt">sample vocabulary</a></b> (0.19 megabytes),
+and the corresponding <b><a href="https://tartarus.org/martin/PorterStemmer/output.txt">output</a></b>.<br><br>
+
+Email <b><a href="mailto:martin@tartarus.org">any comments, suggestions,
+queries</a></b><br><br>
+</blockquote>
+
+<br><font size="+1"><b>Points of difference from the published algorithm</b></font><br><br>
+<blockquote>
+There is an extra rule in Step 2,
+<dl><dd>
+    <i>(m&gt;0) logi</i> &nbsp;→&nbsp; <i>log</i>
+</dd></dl>
+So
+<i>archaeology</i> is equated with <i>archaeological</i> etc.<br><br>
+
+The Step 2 rule
+<dl><dd>
+    <i>(m&gt;0) abli</i> &nbsp;→&nbsp; <i>able</i>
+</dd></dl>
+is replaced by
+<dl><dd>
+    <i>(m&gt;0) bli</i> &nbsp;→&nbsp; <i>ble</i>
+</dd></dl>
+So <i>possibly</i> is equated with <i>possible</i> etc.<br><br>
+
+The algorithm leaves alone strings of length 1 or 2. In any case a string of
+length 1 will be unchanged if passed through the algorithm, but strings of
+length 2 might lose a final <i>s</i>, so <i>as</i> goes to <i>a</i>
+and <i>is</i> to <i>i</i>.
+<br><br>
+
+These differences may have been present in the
+program from which the published algorithm derived. But at such a great
+distance from the original publication it is now difficult to say.<br><br>
+
+It must be emphasised that these differences are very small indeed compared to the
+variations that have been observed in other encodings of the algorithm.<br><br>
+</blockquote>
+
+<br><font size="+1"><b>Status</b></font><br><br>
+<blockquote>
+The Porter stemmer should be regarded as ‘frozen’, that is, strictly defined,
+and not amenable to further modification. As a stemmer, it is slightly inferior
+to the Snowball
+<a href="http://snowball.tartarus.org/algorithms/english/stemmer.html"><i>English</i></a>
+or <i>Porter2</i> stemmer, which derives from it, and which is
+subjected to occasional improvements. For practical work, therefore, the new
+Snowball stemmer is recommended. The Porter stemmer is appropriate to IR
+research work involving stemming where the experiments need to be exactly
+repeatable.
+</blockquote>
+
+<br><font size="+1"><b>Common errors</b></font><br><br>
+<blockquote>
+Historically, the following shortcomings have been found in other encodings of
+the stemming algorithm.
+<br><br>
+The algorithm clearly explains that when a set of rules of the type
+<dl><dd>
+<i>(condition)S1</i> &nbsp;→&nbsp; <i>S2</i>
+</dd></dl>
+are presented together, only one rule is applied,
+the one with the longest matching suffix <i>S1</i> for the given word. This
+is true whether the rule succeeds or fails (i.e. whether or not <i>S2</i>
+replaces <i>S1</i>). Despite this, the rules are sometimes simply
+applied in turn until either one of them succeeds or the list runs out.<br><br>
+
+This leads to small errors in various places, for example in the Step 4 rules
+<dl><dd>
+<i>(m&gt;1)ement</i> &nbsp;→&nbsp;<br>
+ <i>(m&gt;1)ment</i> &nbsp;→&nbsp;<br>
+<i>(m&gt;1)ent</i> &nbsp;→&nbsp;
+</dd></dl>
+ to remove final
+<i>ement</i>, <i>ment</i> and <i>ent</i>.<br><br>
+
+Properly, <i>argument</i> stems to <i>argument</i>. The longest matching
+suffix is <i>-ment</i>. Then stem <i>argu-</i> has measure <i>m</i> equal to 1
+and so <i>-ment</i> will not be removed. End of Step 4. But if the three
+rules are applied in turn, then for suffix <i>-ent</i> the stem <i>argum-</i>
+has measure <i>m</i> equal to 2, and <i>-ent</i> gets removed.<br><br>
+
+The more delicate rules are liable to misinterpretation. (Perhaps
+greater care was required in explaining them.) So
+<dl><dd>
+<i>((m&gt;1) and (*s or *t))ion</i>
+</dd></dl>
+is taken to mean
+<dl><dd>
+<i>(m&gt;1)(s or t)ion</i>
+</dd></dl>
+The former means that
+taking off <i>-ion</i> leaves a stem with measure greater than 1 ending
+<i>-s</i> or <i>-t</i>; the latter means that taking off <i>-sion</i> or
+<i>-tion</i> leaves a stem of measure greater than 1. A similar confusion
+tends to arise in interpreting rule 5<i>b</i>, to reduce final double <i>L</i> to
+single <i>L</i>.<br><br>
+
+Occasionally cruder errors have been seen. For example the test for <i>Y</i> being
+consonant or vowel set up the wrong way round.<br><br>
+
+It is interesting that although the published paper explains how to do the
+tests on the strings <i>S1</i> by a program switch on the last or last but
+one letter, many encodings fail to use this technique, making them
+much slower than they need be.<br><br>
+</blockquote>
+<br><font size="+1"><b>FAQs (frequently asked questions)</b></font><br><br>
+<blockquote>
+<br><font size="+1"><b>#1. What is the licensing arrangement for this software?</b></font><br><br>
+
+This question has become very popular recently (the period 2008−2009), despite
+the clear statment above that ‘‘all these encodings of the algorithm can be used
+free of charge for any
+purpose.’’ The problem I think is that intellectual property has become such a
+major issue that some more formal statement is expected. So to restate it:
+
+<br><br>
+
+The software is completely free for any purpose, unless notes at the head of the
+program text indicates otherwise (which is rare). In any case, the
+notes about licensing are never more restrictive than the BSD License.
+
+<br><br>
+
+In every case where the software is not written by me (Martin Porter), this
+licensing arrangement has been endorsed by the contributor, and it is therefore
+unnecessary to ask the contributor again to confirm it.
+
+<br><br>
+
+I have not asked any contributors (or their employers, if they have them) for
+proofs that they have the right to distribute their software in this way.
+
+<br><br>
+
+(For anyone taking software from the
+<a href="http://snowball.tartarus.org/">Snowball</a>
+website, the position is similar but simpler. There, all the software is issued
+under the BSD License, and for contributions not written by Martin Porter and
+Richard Boulton, we have again not asked the authors, or the authors’
+employers, for proofs that they have such distribution rights.)
+
+<br><br>
+
+<br><font size="+1"><b>#2. Why is the stemmer not producing proper words?</b></font><br><br>
+
+It is often taken to be a crude error that a stemming algorithm does not leave a
+real word after removing the stem. But the purpose of stemming is to bring
+variant forms of a word together, not to map a word onto its ‘paradigm’ form.
+
+<br><br>
+
+And connected with this,
+
+<br><br>
+
+<br><font size="+1"><b>#3. Why are there errors?</b></font><br><br>
+
+The question normally comes in the form, why should word <i>X</i> be stemmed to
+<i>x1</i>, when one would have expected it to be stemmed to <i>x2</i>? It
+is important to remember that the stemming algorithm cannot achieve
+perfection. On balance it will (or may) improve IR performance, but in
+individual cases it may sometimes make what are, or what seem to be,
+errors. Of course, this is a different matter from suggesting an additional rule
+that might be included in the stemmer to improve its performance.
+
+<br><br>
+</blockquote>
+
+<!--
+<BR><FONT SIZE=+1><B>Links</FONT></B><BR><BR>
+<BLOCKQUOTE>
+I will add to this from time to time any noteworthy instructive or educational
+links. Suggestions welcome.
+
+<BR><BR>
+
+Phil Bewig of
+<A HREF="http://programmingpraxis.com"><I>Programming Praxis</I></A>
+has made the Porter stemmer into a
+<A HREF="http://programmingpraxis.com/2009/09/08/porter-stemming">programming example</A>
+on his site.
+
+<BR><BR>
+
+Christopher McKenzie, who contributed the Javascript stemmer, demonstrates his program
+(and therefore demonstrates the Porter stemming algorith) at
+<A HREF="http://qaa.ath.cx/porter_js_demo.html">qaa.ath.cx/porter_js_demo.html</A>
+
+<BR><BR>
+
+</BLOCKQUOTE>
+-->
+ 
+</blockquote></body></html>
