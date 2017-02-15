@@ -1,0 +1,1360 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0067)http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   
+   <title>Introduction to Perl</title>
+<!--
+        Introduction to Perl
+        Notes for MU Information & Access Technology Services Short Course
+        by
+        Greg Johnson, Principal Programmer Analyst
+
+        615 Locust Street #001
+	University of Missouri
+        Columbia, MO 65211
+        JohnsonG@missouri.edu
+
+        This material may be freely copied and adapted, so long
+        as appropriate credit is given to 
+	MU Information & Access Technology Services.
+-->
+</head>
+<body bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#00000">
+
+<center><ul></ul>
+<h1>Introduction to Perl</h1>
+
+<p><strong>MU Information &amp; Access Technology Services Short Course</strong>
+</p><p>University of Missouri - Columbia
+
+<br>20 April 1999
+
+<br><code>www.cclabs.missouri.edu/things/instruction/perl</code> 
+
+</p></center>
+
+<a name="contents"></a><h2>Contents</h2>
+
+<center><table border="0"><tbody><tr valign="TOP"><td>
+ 1. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#whatis">What Is Perl?</a><br> 
+ 2. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#requisite">Course Requisites and Goals</a><br>
+ 3. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#resources">Perl References &amp; Resources</a><br> 
+ 4. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#state">State of Perl</a><br>
+ 5. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#taste">Taste of Perl</a><br>
+ 6. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#running">Storing &amp; Running Perl Programs</a><br>
+ 7. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#elements">The Elements</a><br>
+ 8. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#literals">Literals &amp; Operators</a>
+</td><td>&nbsp;&nbsp;</td>
+<td>
+&nbsp;9. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#loops">Loops and I/O</a><br>
+10. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#gradebook">Grade Book Example</a><br> 
+11. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#pipe">Pipe I/O and System Calls</a><br>
+12. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#matching">Matching</a><br>
+13. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#parsing">Parsing</a><br>
+14. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#cgi">Simple CGI</a><br>
+15. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#testing">Testing Perl Programs</a><br>
+16. <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#goofs">Common Goofs</a>
+</td></tr></tbody></table></center>
+
+<a name="whatis" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>1. What Is Perl?</h2></a>
+
+<p>Perl is a <em>"Practical Extraction and Report Language"</em>
+freely available for Unix, MVS, VMS, MS/DOS, Macintosh, OS/2,
+Amiga, and other operating systems.  Perl has powerful
+text-manipulation functions.  It eclectically combines features
+and purposes of many command languages. Perl has enjoyed recent
+popularity for programming World Wide Web electronic forms and
+generally as glue and gateway between systems, databases, and
+users. 
+
+<a name="requisite" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"></a></p><h2><a name="requisite" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents">2. Course Requisites and Goals</a></h2>
+
+<p>This course presumes participants have elementary
+programming experience in a procedural programming language
+such as C, Pascal, or Basic; and access to a system with Perl
+4 or Perl 5 installed, such as MU Information &amp; Access Technology Services's
+SHOWME and SGI systems.   
+
+</p><p>By completing this course and its homework, you should be able
+to:
+
+</p><ol>
+<li>Locate reference materials and other resources related to
+Perl;
+
+</li><li>Express fundamental programming constructs such as variables,
+arrays, loops, subroutines and input/output in Perl;
+
+</li><li>Understand several concepts relatively idiosyncratic to
+Perl, such as associative arrays, Perl regular expressions,
+and system interfaces;
+
+</li><li>Program in Perl for data manipulation, file maintenance,
+packaging or interfacing system facilities, and for "Common Gateway
+Interface" Web applications.  CGI resources will be examined in 
+more depth in a subsequent MU Information &amp; Access Technology Services Short Course.  
+</li></ol>
+
+<p>To keep this a <em>short</em> course, we won't explain
+object-oriented concepts and some other facilities appropriate
+for large projects.  Perl, perhaps more than any other
+computer language, is full of alternative ways to do the same
+thing;  we tend to show only one or two. We will try to
+stimulate by examples of useful bits of code, results, and
+questions. Turn to the reference materials for further
+explanation. 
+
+<a name="resources" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"></a></p><h2><a name="resources" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents">3. Perl References and Resources</a></h2>
+
+<dl>
+<dt>MU Perl and Perl CGI Materials:
+</dt><dd><code><a href="http://www.cclabs.missouri.edu/things/instruction/perl/">
+www.cclabs.missouri.edu/things/instruction/perl</a></code>
+
+<br><br></dd><dt>One of many sites for Perl Software:
+</dt><dd><code><a href="http://www.cis.ufl.edu/perl/">
+www.cis.ufl.edu/perl/</a></code>
+
+<br><br></dd><dt>Usenet Newsgroups:
+
+</dt><dd><code><a href="news:comp.lang.perl.announce">news:comp.lang.perl.announce</a>,
+<a href="news:comp.lang.perl.misc">news:comp.lang.perl.misc</a>.</code>
+
+<br><br></dd><dt>Reference Manual:
+
+</dt><dd>Larry Wall, Tom Christiansen &amp; Randall L. Schwartz, 
+<cite>Programming Perl</cite>,  2nd Edition September 1996, 670 pages, O'Reilly
+and Associates, Inc., ISBN 1-56592-149-6, $39.95.  The "Camel Book".   A
+thorough Perl 5 reference with plenty of examples.  See <code><a href="http://perl.oreilly.com/">perl.oreilly.com</a></code>.
+
+<br><br></dd><dt>Tutorial Books:
+
+</dt><dd>Hoffman, <cite>Perl 5 For Dummies</cite>, 408 pages, IDG Books, ISBN
+0-7645-0460-6, $29.99.&nbsp; See <code><a href="http://www.idgbooks.com/">
+www.idgbooks.com</a></code>.
+
+</dd><dd>Randal L. Schwartz, <cite>Learning Perl</cite>, 1993, 274
+pages, O'Reilly and Associates, Inc., ISBN 1-56592-042-2, $24.95
+The "Llama Book". 
+
+
+<br><br></dd><dt>On-line Tutorials:
+
+</dt><dd>Web Developer's Virtual Library has tutorials and
+reference for HTML, VRML, XML, CSS, CGI, Perl, Jav, JavaScript and
+much more:&nbsp; <code><a href="http://wdvl.internet.com/">wdvl.internet.com</a></code>.
+
+</dd><dd>Tom's Object-Oriented Perl Tutorial:&nbsp; <code>
+<a href="http://language.perl.com/all_about/perltoot.html">http://language.perl.com/all_about/perltoot.html</a></code>
+
+</dd><dd>Randy's Column on OO Perl:&nbsp; <code>
+<a href="http://www.stonehenge.com/merlyn/UnixReview/col13.html">http://www.stonehenge.com/merlyn/UnixReview/col13.html</a></code>
+
+</dd></dl>
+
+<h3>Homework!</h3>
+ 
+Learn how to search the Perl 5 online manual using the above
+URL with Netscape, Mosaic, or another World Wide Web browser! 
+Find an alternative expansion of the word "Perl" as an acronym
+involving the word "eclectic".  
+
+<a name="state" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>4. State of Perl</h2></a>
+
+<p>Two types of programmers use Perl.  System administrators like
+it for the way it glues together system commands to manipulate
+data and processes, and for its pattern-matching functions aids
+in system searches and reporting.  People developing electronic
+forms for Unix Web servers find Perl easier to learn and use than
+C, and for their purposes Perl offers more built-in or publicly
+available functions such as easy data validation and simple
+databases.
+
+</p><p>The Perl code in this document works under both Perl 4.036
+(the <em>last</em> version of Perl 4) and Perl 5.0.  Perl 5 adds
+object-oriented facilities and other conveniences.  
+The Reference Guide identifies with a
+double-dagger (as in ++) new features of Perl 5.
+
+</p><p>For major general-purpose Perl applications, particularly
+CGI scripts and client or server applications, first check the
+'Net for Perl modules that you can exploit!  See the FAQ "Perl
+5 Module List" regularly posted to the Usenet group
+<cite>comp.lang.perl.announce.</cite> 
+
+
+<a name="taste" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"></a></p><h2><a name="taste" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents">5. Taste of Perl</a></h2>
+
+<p>Quite useful Perl programs can be short.  Suppose we want to
+change the same text in many files.  Instead of editing each
+possible file or constructing some cryptic find, awk, or sed
+commands, you could issue a single command:
+
+</p><p><em>Example:  Amazing Perl One-Liner That Substitutes
+Text In Multiple Files</em>
+
+</p><pre>      perl  -e 's/gopher/World Wide Web/gi'  -p  -i.bak  *.html</pre>
+
+<p>This command, issued at the Unix prompt, executes the short Perl program specified in single quotes. This program consists of one perl operation;  it substitutes for original word "gopher" the phrase "World Wide Web", (globally, ignoring case).  The re
+
+mainder of the Unix command indicates that the perl program should run for each file ending in ".html" in the current directory. If any file "blah.html" needs changing, a backup of the original is made as file "blah.html.bak". 
+<cite> Programming Perl</cite> lists additional handy one-liners.
+
+</p><p>For those accustomed to "classic" procedural
+programming, the "amazing one-liner" above can be
+expanded in Perl in a style more like C or Pascal:
+
+</p><p><em>Example:  Global Substitution, The Scenic Route</em>
+</p><pre>    #!/usr/local/bin/perl -w
+    # File:  go2www    
+    # This Perl program in classic programming style changes
+    # the string "gopher" to "World Wide Web" in all files
+    # specified on the command line.
+    # 19950926 gkj
+    $original='gopher';
+    $replacement="World Wide Web";
+    $nchanges = 0;
+    # The input record separator is defined by Perl global 
+    # variable $/.  It can be anything, including multiple 
+    # characters.  Normally it is "\n", newline.  Here, we
+    # say there is no record separator, so the whole file
+    # is read as one long record, newlines included.
+    undef $/;
+
+    # Suppose this program was invoked with the command
+    #     go2www ax.html  big.basket.html  candle.html
+    # Then builtin list @ARGV would contain three elments 
+    # ('ax.html', 'big.basket.html', 'candle.html')
+    # These could be accessed as $ARGV[0] $ARGV[1] $ARGV[2] 
+
+    foreach $file (@ARGV) {
+        if (! open(INPUT,"&lt;$file") ) {
+            print STDERR "Can't open input file $bakfile\n";
+            next;
+        }
+
+        # Read input file as one long record.
+        $data=&lt;INPUT&gt;;
+        close INPUT;
+
+        if ($data =~ s/$original/$replacement/gi) {
+            $bakfile = "$file.bak";
+            # Abort if can't backup original or output.
+            if (! rename($file,$bakfile)) {
+                die "Can't rename $file $!";
+            }
+            if (! open(OUTPUT,"&gt;$file") ) {
+                die "Can't open output file $file\n";
+            }
+            print OUTPUT $data;
+            close OUTPUT;
+            print STDERR "$file changed\n";
+            $nchanges++;
+        }
+
+        else {  print STDERR "$file not changed\n"; }
+    }
+    print STDERR "$nchanges files changed.\n";
+    exit(0); </pre>
+
+<p><strong>Questions:</strong>
+</p><ol>
+<li>What do you guess that the "!" means, as in:
+<pre>            if (! open(OUTPUT,"&gt;$file") ) {
+                die "Can't open output file $file\n";
+            }</pre>
+</li><li>What does the "&gt;" probably mean here?  Compare with
+"open(INPUT ...)". 
+</li><li>What does "die" do?
+</li><li>Some languages use "IF ... THEN DO ... END; ELSE IF ...
+THEN DO ... END".  How is this notated in Perl? 
+</li><li>What does $nchanges++ do?
+</li></ol>
+
+<p>The Perl Creed is, "There is more than one way!"  This noble freedom of expression however results in the first of the four <strong>Perl Paradoxes:</strong> 
+<em>Perl programs are easy to write but not always easy to read.</em>
+For example, the following lines are equivalent! 
+</p><pre>    if ($x == 0) {$y = 10;}  else {$y = 20;}
+    $y = $x==0 ? 10 : 20;
+    $y = 20;  $y = 10 if $x==0;
+    unless ($x == 0) {$y=20} else {$y=10}
+    if ($x)  {$y=20} else {$y=10}
+    $y = (10,20)[$x != 0];
+</pre>
+
+<a name="running" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>6. Storing and Running Perl Programs</h2></a>
+
+<h3>Homework: Hello</h3>
+
+To test your ability to store and run a Perl program, enter
+and execute something like this classic code:
+
+<pre>    #!/usr/local/bin/perl -w
+    if ($#ARGV &gt;= 0) { $who = join(' ', @ARGV); }
+    else { $who = 'World'; }
+    print "Hello, $who!\n";</pre>
+
+<h3>Here's How:</h3>
+
+<p>Let us assume that the above lines are stored in a
+Unix file <code>~/bin/hello</code>.  (That's in your home
+directory, subdirectory bin, file hello.)
+You can then run the program by entering a command like:
+</p><pre>    perl ~/bin/hello
+    perl ~/bin/hello Citizens of Earth
+    perl hello          <em>(If you're in the ~/bin directory.)</em></pre>
+
+<p>If you expect to use this program a lot and want to execute
+it as a command, then you need to do five things.
+
+</p><p>1. The first line of the program should after a "#!"  specify
+the location of the perl command, typically as <code>
+#!/usr/local/bin/perl </code> or <code> #!/usr/bin/perl </code>,
+as illustrated in the preceding example program.
+This line can also give command options, like -w (warn of possible
+inconsistencies).
+
+</p><p>2. Set the execute permissions of the program file.  To make the
+file executable (and readable and writable) by only yourself, 
+use a Unix command like:
+</p><pre>    chmod 700 ~/bin/hello</pre>
+
+To make it executable and readable by all enter a Unix command 
+like the following:
+
+<pre>    chmod a+rx ~/bin/hello</pre>
+
+You may also need to use  chmod a+x  on the directories ~ and ~/bin.  
+See "man chmod" for details and the security implications.  
+(The MU program "chweb" can make a file accessible to the Web server 
+and yourself, but not to other users.  See "man chweb" for details.)
+
+<p>3. Edit your file <code>~/.cshrc</code> or <code>~/.login</code>
+to make directory <code>~/bin</code> part of the path Unix
+searches for executables, with a line like this:
+
+</p><pre>    set path = ($path ~/bin)</pre>
+
+<p>4. This takes effect the next time you start a default tcsh or
+csh shell (.cshrc file) or login (.login file).  If you want it
+to take effect immediately, enter the above set path command at
+the Unix prompt or enter execute your .cshrc or .login file with
+the "source" command.   If you are using sh, bash, ksh or some 
+other shell, alter ~/.profile or some other 
+file to set the path at login.
+
+</p><p>If a program you want to execute has just been newly created, 
+then issue the csh/tcsh command "rehash" to rescan the path. 
+
+</p><p>If you perform (1)-(5), then you can execute your program via
+a command like this:
+</p><pre>    hello</pre>
+
+<a name="elements" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>7. The Elements</h2></a>
+
+<p>The rest of these notes will refer to the
+<a href="http://www.cclabs.missouri.edu/perl/refguide/refguide.ps">Perl
+5 Reference Guide</a>, highlighting and expanding on important
+points.  So get your Reference Guide and turn to Section 2,
+<em>Literals.</em>
+
+</p><h3>Perl's Three Data Structures</h3>
+
+<li><strong>Scalars</strong> can be numeric or character as determined by context:
+<pre>    123  12.4  5E-10  0xff <em>(hex)</em>  0377 <em>(octal)</em>
+
+    'What you $see is (almost) what \n you get'   'Don\'t Walk'
+
+    "How are you?"  "Substitute values of $x and \n in \" quotes."
+
+    `date`   `uptime -u`   `du -sk $filespec | sort -n`
+
+    $x    $list_of_things[5]     $lookup{'key'}</pre>
+<blockquote>
+Single-quotes ' ' allow no substitution except for \\ and \'. 
+Double-quotes " " allow substitution of variables like $x and control codes
+like \n (newline).
+Back-quotes ` ` also allow substitution, then try to execute the
+result as a system command, returning as the final value whatever
+the system command outputs.
+</blockquote>
+
+</li><li><strong>Arrays</strong> of scalars (also called <strong>lists</strong>) are sequentially-arranged scalars:
+
+<pre>    ('Sunday', 'Monday', 'Tuesday', 'Wednesday',
+        'Thursday', 'Friday', 'Saturday')
+
+    (13,14,15,16,17,18,19)   <em>equivalent to</em>  (13..19)
+
+    (13,14,15,16,17,18,19)[2..4]  <em>equivalent to</em>  (15,16,17)
+
+    @whole_list</pre>
+
+</li><li><strong>Associative arrays</strong> (also called <strong>hashes</strong>) help you remember things:
+<pre>    $DaysInMonth{'January'} = 31;   $enrolled{'Joe College'} = 1;
+
+    $StudentName{654321} = 'Joe College';  
+
+    $score{$studentno,$examno} = 89; 
+	
+    %whole_hash</pre>
+
+<p>Perl 5 allows combinations of these, such as lists of lists
+and associative arrays of lists.
+
+</p><h3>Name Conventions</h3>
+
+<p>Scalar variables start with '$', even when referring to an
+array element.  The variable name reference for a whole list
+starts with '@', and the variable name reference for a whole
+associative array starts with '%'. 
+
+</p><p>Lists are indexed with square brackets enclosing a number,
+normally starting with [0].  In Perl 5, negative subscripts
+count from the end.  Thus, <code> $things[5] </code> is the
+6th element of array<code> @things</code>, and 
+</p><pre>    ('Sun','Mon','Tue','Wed','Thu','Fri','Sat')[1]</pre>
+
+equals <code>'Mon'</code>.
+
+<p>Associative arrays are indexed with curly brackets
+enclosing a string. $whatever, @whatever, and %whatever are
+three different variables. 
+
+</p><pre>    @days = (31,28,31,30,31,30,31,31,30,31,30,31);
+                   <em># A list with 12 elements.</em>
+
+    $#days         <em># Last index of @days; 11 for above list</em>
+
+    $#days = 7;    <em># shortens or lengthens list @days to 8 elements</em>
+
+    @days          <em># ($days[0], $days[1],... )</em>
+
+    @days[3,4,5]   <em># = (30,31,30)</em>
+
+    @days{'a','c'} <em># same as ($days{'a'},$days{'c'})</em>
+
+    %days          <em># (key1, value1, key2, value2, ...)</em>
+</pre>
+
+<p>Case <i>is</i> significant--"$FOO", "$Foo" and "$foo" are
+all different variables.  If a letter or underscore is the
+first character after the $, @, or %, the rest of the name
+may also contain digits and underscores.  If this character
+is a digit, the rest must be digits.  Perl has several dozen
+special variables whose second character is non-alphanumeric.
+For example, $/ is the input record separator, newline "\n"
+by default.  An uninitialized variable has a special "undefined"
+value which can be detected by the function defined().  Undefined
+values convert depending on context to 0, null, or false.
+</p><p>The variable "<strong>$_</strong>" Perl presumes when needed variables
+are not specified. Thus:
+</p><pre>    &lt;STDIN&gt;;          <em>assigns a record from filehandle</em> STDIN <em>to</em> $_
+    print;            <em>prints the curent value of $_</em>
+    chop;             <em>removes the last character from</em> $_
+    @things = split;  <em>parses</em> $_ <em>into white-space delimited</em>
+                      <em>words, which become successive</em>
+                      <em>elements of list @things.</em></pre>
+$_, $1, $2, $3, and other implicit variables contribute to 
+<strong>Perl Paradox Number Two:</strong> 
+<em>What you don't see can help you or hurt you. </em> See <cite>Quick Reference Guide</cite> Section 25, Special Variables. 
+<p><strong>Subroutines</strong> and <strong>functions</strong> are referenced with an initial
+'&amp;', which is optional if reference is obviously a subroutine
+or function such as following the sub, do, and sort directives:
+
+</p><pre>    sub square { return $_[0] ** 2; }
+
+    print "5 squared is ", &amp;square(5);</pre>
+
+<p><strong>Filehandles</strong> don't start with a special character, and so
+as to not conflict with reserved words are most reliably
+specified as uppercase names:  INPUT, OUTPUT, STDIN, STDOUT,
+STDERR, etc.
+
+<a name="literals" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"></a></p><h2><a name="literals" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents">8. Literals and Operators</a></h2>
+
+<h3>Example: Numbers and Characters</h3>
+
+<pre>    #!/usr/local/bin/perl
+    print '007',' has been portrayed by at least ', 004, ' actors. ';
+    print 7+3, ' ', 7*3, ' ', 7/3, ' ', 7%3, ' ', 7**3, ' ';
+    $x = 7;
+    print $x;
+    print '   Doesn\'t resolve variables like $x and backslashes \n. ';
+    print "Does resolve $x and backslash\n";
+    $y = "A line containing $x and ending with line feed.\n";
+    print $y;
+    $y = "Con" . "cat" . "enation!\n";
+    print $y;</pre>
+
+<p><em>This produces:</em>
+</p><pre>    007 has been portrayed by at least 4 actors. 10 21
+    2.3333333333333335 1 343 7
+    Doesn't resolve variables like $x and backslashes \n. Does
+    resolve 7 and backslash
+    A line containing 7 and ending with line feed.
+    Concatenation!</pre>
+<p><strong>Questions:</strong>
+</p><ol>
+
+<li>Why does the output from the first few print statements run together?
+</li><li>Is it necessary to declare variables in Perl?  Is it possible?
+</li></ol>
+
+<h3>Example: Comparisons</h3>
+
+<pre>    # The following "&lt;&lt;" variation of
+    # data input simplifies CGI forms.
+    $x = 'operator';
+    print &lt;&lt;THATSALL;
+    A common mistake:  Confusing the assignment $x =
+    and the numeric comparison $x ==, and the character
+    comparison $x eq.
+    THATSALL
+    $x = 7;
+    if ($x == 7) { print "x is $x\n"; }
+    if ($x = 5)  {
+        print "x is now $x,",
+        "the assignment is successful.\n";
+    }
+    $x = 'stuff';
+    if ($x eq 'stuff') {
+        print "Use eq, ne, lt, gt, etc for strings.\n";
+    }</pre>
+<p><em>This produces:</em>
+</p><pre>    A common mistake:  Confusing the assignment operator =
+    and the numeric comparison operator ==, and the character
+    comparison operator eq.
+    x is 7
+    x is now 5, the assignment is successful.
+    Use eq, ne, lt, gt, etc for strings.</pre>
+
+<h3>Example:  Ordinary Arrays</h3>
+
+<pre>    @stuff = ('This', 'is', 'a', 'list.');
+    print "Lists and strings are indexed from 0.\n";
+    print "So \$stuff[1] = $stuff[1], ",
+         "and \$#stuff = $#stuff.\n";
+    print @stuff,"\n";
+    print join('...',@stuff),"\n";
+    splice(@stuff, 3, 0, ('fine', 'little'));
+    print join('...',@stuff),"\n";</pre>
+
+<p><em>This produces:</em>
+
+</p><pre>    Lists and strings are indexed from 0.
+    So $stuff[1] = is, and $#stuff = 3.
+    Thisisalist.
+    This...is...a...list.
+    This...is...a...fine...little...list.</pre>
+
+<h3>Homework: Validate a date.</h3>
+<pre>    #!/usr/local/bin/perl
+    print "Enter numeric:  month  day  year\n";
+    $_ = &lt;STDIN&gt;;
+    ($month,$day,$year) = split;</pre>
+
+Complete this program.  Print an error message if the month is
+not valid.  Print an error message if the day is not valid for
+the given month (31 is ok for January but not for February).
+See if you can avoid using conditionals (if, unless, ?,...)
+statements but instead use data structures.
+
+<p>Approach this incrementally.  On the first draft, assume
+that the user enters 3 numbers separated by spaces and that
+February has 28 days.  Subsequent refinements should account
+for bad input and leap year.  Finally, find a Perl builtin
+function that converts a date to system time, and see how
+to use that to validate time data generally.
+
+</p><h3>Homework: Play with associative arrays.</h3>
+
+<p>Start with a few assignments like:
+
+</p><pre>    $name{12345} = 'John Doe';
+    $name{24680} = 'Jane Smith';</pre>
+
+Print these scalars.  What is the value of an associative
+array element that has never been assigned?  What happens if you
+assign an associative array to a scalar?  What happens if you
+assign an associative array to a normal array?
+
+<pre>    $blunk = %name;
+    @persons = %name;
+    print '$blunk=',$blunk,', @persons=',
+        join(', ',@persons),"\n";</pre>
+
+What happens if you assign a normal array to an associative
+array?
+
+<a name="loops" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>9. Loops and I/O</h2></a>
+
+<h3>Example:  Command Line Values and Iterative Loops</h3>
+
+<pre>    print "$#ARGV is the subscript of the ",
+        "last command argument.\n";
+    # Iterate on numeric subscript 0 to $#ARGV:
+    for ($i=0; $i &lt;= $#ARGV; $i++) {
+        print "Argument $i is $ARGV[$i].\n";
+    }
+    # A variation on the preceding loop:
+    foreach $item (@ARGV) {
+        print "The word is:  $item.\n";
+    }
+    # A similar variation, using the
+    # "Default Scalar Variable" $_ :
+    foreach (@ARGV) {
+        print "Say:  $_.\n";
+    }</pre>
+<em>Demonstration:</em>
+<pre>    &gt; <strong>perl example5.pl Gooood morning, Columbia!</strong>
+    2 is the subscript of the last command argument.
+    Argument 0 is Gooood.
+    Argument 1 is morning,.
+    Argument 2 is Columbia!.
+    The word is:  Gooood.
+    The word is:  morning,.
+    The word is:  Columbia!.
+    Say:  Gooood.
+    Say:  morning,.
+    Say:  Columbia!.
+</pre>
+
+<h3>Example:  Standard I/O</h3>
+
+<pre>    print STDOUT "Tell me something: ";
+    while ($input = &lt;STDIN&gt;) {
+            print STDOUT "You said, quote: $input endquote\n";
+            chop $input;
+            print STDOUT "Without the newline:  $input endquote\n";
+            if ($input eq '') { print STDERR "Null input!\n"; }
+            print STDOUT "Tell me more, or ^D to end:\n";
+    }
+    print STDOUT "That's all!\n";</pre>
+
+Note 1: The <code>while</code> statement's condition is an
+assignment statement: assign the next record from standard
+input to the variable $input. On end of file, this will assign
+not a null value but an "undefined" value.  An undefined value
+in the context of a condition evaluates to "false".  So the
+"<code>while ($input = &lt;STDIN&gt;)</code>" does three things:
+gets a record, assigns it to $input, and tests whether $input
+is undefined.  In other contexts, Perl treats an undefined
+variable as null or zero.  Thus, if <code>$i</code> is not
+initialized, <code>$i++</code> sets <code>$i</code> to 1.
+
+Perl Paradox Number Three:  
+<em>Side effects can yield an elegant face or a pain in the rear.</em>
+
+<p>Note 2: Data records are by default terminated by a newline
+character "\n" which in the above example is included as the last
+character of variable $input.  The "chop" function removes the last
+character of its argument.  Perl 5 introduces a "chomp" function
+that removes the last characters of a variable only if they are
+the currently defined end-of-record sequence, which is defined in
+the special variable $/.
+
+</p><p><em>Demonstration:</em>
+</p><pre>    &gt; <strong>perl example6.pl</strong>
+    Tell me something: <strong>I'm warm.</strong>
+    You said, quote: I'm warm.
+     endquote
+    Without the newline:  I'm warm. endquote
+    Tell me more, or ^D to end:
+    <strong>Can I have some water?</strong>
+    You said, quote: Can I have some water?
+     endquote
+    Without the newline:  Can I have some water? endquote
+    Tell me more, or ^D to end:
+
+    You said, quote:
+     endquote
+    Without the newline:   endquote
+    Null input!
+    Tell me more, or ^D to end:
+    <strong>^D</strong>
+    That's all!
+</pre>
+
+<h3>Example:  Perls, A Perl Shell, Calculator, &amp; Learning Tool</h3>
+
+<pre>    #!/usr/local/bin/perl
+    for (;;) {
+	print '(',join(', ',@ReSuLt),') ?';
+	last unless $InPuT = &lt;STDIN&gt;;
+	$? = ''; $@ = ''; $! = ''; 
+	@ReSuLt = eval $InPuT;
+	if ($?) { print 'status=',$?,' ' }
+	if ($@) { print 'errmsg=',$@,' ' }
+	if ($!) { print 'errno=',$!+0,': ',$!,' ' }
+    }</pre>
+This reads a line from the terminal and executes it as a Perl
+program.  The "for (;;) {...}" makes an endless loop.  The "last unless" line
+might be equivalently specified:
+<pre>    $InPuT = &lt;STDIN&gt;;               # Get line from standard input.
+    if (! defined($InPuT)) {last;}  # If no line, leave the loop.</pre>
+
+The "eval" function in Perl evaluates a string as a Perl program.
+"$@" is the Perl error message from the last "eval" or "do".
+<p><em>Demonstration:</em>
+</p><pre>    <b>perls</b>
+    () ?<b>Howdy</b>
+    (Howdy) ?<b>2+5</b>
+    (7) ?<b>sqrt(2)</b>
+    (1.4142135623730951) ?<b>$x</b>
+    () ?<b>$x = sqrt(2)</b>
+    (1.4142135623730951) ?<b>$x + 5</b>
+    (6.4142135623730949) ?<b>1/0</b>
+    errmsg=Illegal division by constant zero in file (eval) at line 2, next 2 tokens "0;"
+    () ?<b>system 'date'</b>
+    Fri Sep 27 10:02:43 CDT 1996
+    (0) ?<b>$x = `date`</b>
+    (Fri Sep 27 10:02:52 CDT 1996
+    ) ?<b>chop $x</b>
+    (
+    ) ?<b>$x</b>
+    (Fri Sep 27 10:02:52 CDT 1996) ?<b>@y = split(/ /,$x)</b>
+    (Fri, Sep, 27, 10:02:52, CDT, 1996) ?<b>@y[1,2,5]</b>
+    (Sep, 27, 1996) ?<b>localtime()</b>
+    (37, 4, 10, 27, 8, 96, 5, 270, 1) ?
+    () ?<b>foreach (1..10) {print sqrt(),' '}</b>
+    1 1.4142135623730951 1.7320508075688772 2 2.2360679774997898 
+    2.4494897427831779 2.6457513110645907 2.8284271247461903 3 3.1622776601683795    
+    () ?<b>exit</b>
+</pre>
+
+<h3>Example:  File I/O</h3>
+
+<pre>    #!/usr/local/bin/perl
+    # Function:  Reverse each line of a file
+
+    # 1: Get command line values:
+    if ($#ARGV !=1) {
+        die "Usage:  $0 inputfile outputfile\n";
+    }
+    ($infile,$outfile) = @ARGV;
+    if (! -r $infile) {
+        die "Can't read input $infile\n";
+    }
+    if (! -f $infile) {
+        die "Input $infile is not a plain file\n";
+    }
+
+    # 2: Validate files
+    # Or statements "||" short-circuit, so that if an early part
+    # evaluates as true, Perl doesn't bother to evaluate the rest.
+    # Here, if the file opens successfully, we don't abort:
+    open(INPUT,"&lt;$infile") ||
+        die "Can't input $infile $!";
+    if ( -e $outfile) {
+        print STDERR "Output file $outfile exists!\n";
+        until ($ans eq 'r' || $ans eq 'a' || $ans eq 'e' ) {
+            print STDERR "replace, append, or exit? ";
+            $ans = getc(STDIN);
+        }
+        if ($ans eq 'e') {exit}
+    }
+    if ($ans eq 'a') {$mode='&gt;&gt;'}
+    else {$mode='&gt;'}
+    open(OUTPUT,"$mode$outfile") ||
+        die "Can't output $outfile $!";
+
+    # 3: Read input, reverse each line, output it.
+    while (&lt;INPUT&gt;) {
+        chop $_;
+        $_ = reverse $_;
+        print OUTPUT $_,"\n";
+    }
+
+    # 4: Done!
+    close INPUT,OUTPUT;
+    exit;
+</pre>
+
+<a name="gradebook" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>10. Data-Processing:  Grade Book Example</h2></a>
+
+<p>This example produces a score summary report by combining data
+from a simple file of student info and a file of their scores.
+
+</p><p><em>Input file "stufile"</em> is delimited with colons.
+Fields are Student ID, Name, Year:
+
+</p><pre>    123456:Washington,George:SR
+    246802:Lincoln,Abraham "Abe":SO
+    357913:Jefferson,Thomas:JR
+    212121:Roosevelt,Theodore "Teddy":SO</pre>
+<p><em>Input file "scorefile"</em> is delimited with blanks.
+Fields are Student ID, Exam number, Score on exam. Note that Abe is missing exam 2:
+</p><pre>    123456 1 98
+    212121 1 86
+    246802 1 89
+    357913 1 90
+    123456 2 96
+    212121 2 88
+    357913 2 92
+    123456 3 97
+    212121 3 96
+    246802 3 95
+    357913 3 94</pre>
+<p><em>The desired report:</em>
+</p><pre>    Stu-ID Name...                       1   2   3   Totals:
+
+    357913 Jefferson,Thomas             90  92  94       276
+    246802 Lincoln,Abraham "Abe"        89      95       184
+    212121 Roosevelt,Theodore "Teddy"   86  88  96       270
+    123456 Washington,George            98  96  97       291
+
+                              Totals:  363 276 382</pre>
+<p><em>The program that made this report:</em>
+</p><pre>    #!/usr/local/bin/perl
+    # Gradebook - demonstrates I/O, associative
+    # arrays, sorting, and report formatting.
+    # This accommodates any number of exams and students
+    # and missing data.  Input files are:
+    $stufile='stufile';
+    $scorefile='scorefile';
+
+    # If file opens successfully, this evaluates as "true", and Perl
+    # does not evaluate rest of the "or" "||"
+    open (NAMES,"&lt;$stufile")
+        || die "Can't open $stufile $!";
+    open (SCORES,"&lt;$scorefile")
+        || die "Can't open $scorefile $!";
+
+    # Build an associative array of student info
+    # keyed by student number
+
+    while (&lt;NAMES&gt;) {
+            ($stuid,$name,$year) = split(':',$_);
+            $name{$stuid}=$name;
+            if (length($name)&gt;$maxnamelength) {
+                    $maxnamelength=length($name);
+            }
+    }
+    close NAMES;
+
+    # Build a table from the test scores:
+
+    while (&lt;SCORES&gt;) {
+       ($stuid,$examno,$score) = split;
+       $score{$stuid,$examno} = $score;
+       if ($examno &gt; $maxexamno) {
+          $maxexamno = $examno;
+       }
+    }
+    close SCORES;
+
+    # Print the report from accumulated data!
+
+    printf "%6s %-${maxnamelength}s ",
+            'Stu-ID','Name...';
+    foreach $examno (1..$maxexamno) {
+            printf "%4d",$examno;
+    }
+    printf "%10s\n\n",'Totals:';
+
+    # Subroutine "byname" is used to sort the %name array.
+    # The "sort" function gives variables $a and $b to
+    # subroutines it calls.
+    # "x cmp y" function returns -1 if x&lt;y, 0 if x=y,
+    # +1 if x&gt;y.  See the Perl documentation for details.
+
+    sub byname { $name{$a} cmp $name{$b} }
+
+    # Order student IDs so the names appear alphabetically:
+    foreach $stuid ( sort byname keys(%name) ) {
+       # Print scores for a student, and a total:
+       printf "%6d %-${maxnamelength}s ",
+               $stuid,$name{$stuid};
+       $total = 0;
+          foreach $examno (1..$maxexamno) {
+             printf "%4s",$score{$stuid,$examno};
+             $total += $score{$stuid,$examno};
+             $examtot{$examno} += $score{$stuid,$examno};
+          }
+          printf "%10d\n",$total;
+    }
+
+    printf "\n%6s %${maxnamelength}s ",'',"Totals: ";
+    foreach $examno (1..$maxexamno) {
+       printf "%4d",$examtot{$examno};
+    }
+    print "\n";
+    exit(0);</pre>
+<p>Perl allows an associative array to be "tied" to a genuine
+database, such that expressions like $record = $student{$key}
+use the database.  See the "dbm" and "tie" functions.
+
+<a name="pipe" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"></a></p><h2><a name="pipe" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents">11. Pipe I/O and System Calls</a></h2>
+
+<pre>    #!/usr/local/bin/perl
+    # Report on disk usage under specified files
+    # The Unix command "du -sk ..." (on BSD Unix, "du -s ...")
+    # produces a series of lines:
+    #   1942    bin
+    #   2981    etc
+    #   ...
+    # listing the K bytes used under each file or directory.
+    # It doesn't show other information, such as the
+    # modification date or owner.
+    # This program gets du's kbytes and filename, and merges
+    # this info with other useful information for each file.
+    #
+
+    $files = join(' ',@ARGV);
+
+    # The trailing pipe "|" directs command output
+    # into our program:
+
+    if (! open (DUPIPE,"du -sk $files | sort -nr |"))  {
+        die "Can't run du! $!\n";
+    }
+
+    printf "%8s %-8s %-16s %8s %s\n",
+        'K-bytes','Login','Name','Modified','File';
+    while (&lt;DUPIPE&gt;) {
+        # parse the du info:
+        ($kbytes, $filename) = split;
+
+        # Call system to look up file info like "ls" does:
+        ($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,
+            $size,$atime,$mtime,$ctime)
+            = stat($filename);
+
+        # Call system to associate login &amp; name with uid:
+        if ($uid != $previous_uid) {
+            ($login,$passwd,$uid,$gid,$quota,$comment,
+                $realname,$dir,$shell) = getpwuid($uid);
+            ($realname) = split(',',substr($realname,0,20));
+            $previous_uid = $uid;
+        }
+
+        # Convert the modification-time to readable form:
+        ($sec,$min,$hour,$mday,$mon,$myear) = localtime($mtime);
+        $mmonth = $mon+1;
+
+        printf "%8s %-8s %-16s %02s-%02d-%02d %s\n",
+            $kbytes, $login, $realname,
+            $myear, $mmonth, $mday, $filename;
+    }</pre>
+<p><em>Demonstration Output</em>
+</p><pre>    K-bytes Login    Name             Modified File
+      40788 c527100  Fred Flintstone  95-10-05 c527100
+      32685 c565060  Peter Parker     95-10-05 c565060
+      24932 c579818  Clark Kent       95-10-06 c579818
+      15388 c576657  Lois Lane        95-10-06 c576657
+       9462 c572038  Bruce Wayne      95-10-06 c572038
+       8381 c517401  Eric McGregor    95-10-05 c517401
+       7022 c594912  Asterisk de Gaul 95-10-05 c594912</pre>
+
+<br><br><p>
+
+<a name="matching" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"></a></p><h2><a name="matching" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents">12. Matching</a></h2>
+Matching involves use of patterns called "regular expressions". This, as you will see, leads to Perl Paradox Number Four: <em> Regular expressions aren't.</em> See sections 13 and 14 of the <cite>Quick Reference.</cite> 
+
+<p>The <strong>=~</strong> operator performs pattern matching
+and substitution.  For example, if:
+</p><pre>    $s = 'One if by land and two if by sea';</pre>
+then:
+<pre>    if ($s =~ /if by la/) {print "YES"}
+    else {print "NO"}</pre>
+
+prints "YES", because the string $s matches the simple constant
+pattern "if by la".
+<pre>    if ($s =~ /one/) {print "YES"}
+    else {print "NO"}</pre>
+
+prints "NO", because the string does not match the pattern.
+However, by adding the "i" option to ignore case, we would get a
+"YES" from the following:
+
+<pre>    if ($s =~ /one/i) {print "YES"}
+    else {print "NO"}</pre>
+
+<p>Patterns can contain a mind-boggling variety of special
+directions that facilitate very general matching.  See
+<cite>Perl Reference Guide</cite> section 13, Regular
+Expressions.  For example, a period matches any character (except
+the "newline" \n character).
+
+</p><pre>    if ($x =~ /l.mp/) {print "YES"}</pre>
+
+would print "YES" for $x = "lamp", "lump", "slumped",
+but not for $x = "lmp" or "less amperes".
+
+<p>Parentheses () group pattern elements.  An asterisk * means
+that the preceding character, element, or group of elements may occur zero
+times, one time, or many times.  Similarly, a plus + means that
+the preceding element or group of elements must occur at least
+once.  A question mark ? matches zero or one times.  So:
+
+</p><pre>    /fr.*nd/  <em>matches</em> "frnd", "friend", "front and back"
+    /fr.+nd/  <em>matches</em> "frond", "friend", "front and back"
+                <em>but not</em> "frnd".
+    /10*1/    <em>matches</em> "11", "101", "1001", "100000001".
+    /b(an)*a/ <em>matches</em> "ba", "bana", "banana", "banananana"
+    /flo?at/  <em>matches</em> "flat" and "float"
+                <em>but not</em> "flooat"</pre>
+
+<p>Square brackets [ ] match a class of single characters.
+
+</p><pre>    [0123456789] <em>matches</em> any single digit
+    [0-9]        <em>matches</em> any single digit
+    [0-9]+       <em>matches</em> any sequence of one or more digits
+    [a-z]+       <em>matches</em> any lowercase word
+    [A-Z]+       <em>matches</em> any uppercase word
+    [ab n]*      <em>matches</em> the null string "", "b",
+                    any number of blanks, "nab a banana"</pre>
+
+<p>[^...] matches characters that are <em>not</em> "...":
+</p><pre>    [^0-9]       <em>matches</em> any non-digit character.</pre>
+
+<p>Curly braces allow more precise specification of repeated
+fields.  For example <code>[0-9]{6}</code> matches any sequence
+of 6 digits, and <code>[0-9]{6,10}</code> matches any sequence of
+6 to 10 digits.
+
+</p><p>Patterns float, unless anchored.  The caret ^ (outside [ ]) 
+anchors a pattern to the beginning, and dollar-sign $ anchors 
+a pattern at the end, so:
+
+</p><pre>    /at/         <em>matches</em> "at", "attention", "flat", &amp; "flatter"
+    /^at/        <em>matches</em> "at" &amp; "attention" <em>but not</em> "flat"
+    /at$/        <em>matches</em> "at" &amp; "flat", <em>but not</em> "attention"
+    /^at$/       <em>matches</em> "at" and nothing else.
+    /^at$/i      <em>matches</em> "at", "At", "aT", and "AT".
+    /^[ \t]*$/   <em>matches</em> a "blank line", one that contains nothing
+                          or any combination of blanks and tabs.</pre>
+
+<p><em>The Backslash.</em>
+Other characters simply match themselves, but the characters
+<code>+?.*^$()[]{}|\</code> and usually <code> /</code> must
+be escaped with a backslash <code>\</code> to be taken
+literally.  Thus:
+
+</p><pre>    /10.2/       <em>matches</em> "10Q2", "1052", and "10.2"
+    /10\.2/      <em>matches</em> "10.2" <em>but not</em> "10Q2" or "1052"
+    /\*+/        <em>matches</em> one or more asterisks
+    /A:\\DIR/    <em>matches</em> "A:\DIR"
+    /\/usr\/bin/ <em>matches</em> "/usr/bin"</pre>
+
+If a backslash preceeds an alphanumeric
+character, this sequence takes a special meaning, typically a short
+form of a [ ] character class.  For example, \d is the same as
+the <code>[0-9]</code> digits character class.
+
+<pre>    /[-+]?\d*\.?\d*/      <em>is the same as</em>
+    /[-+]?[0-9]*\.?\d*/</pre>
+
+Either of the above matches decimal numbers:  "-150", "-4.13",
+"3.1415", "+0000.00", etc.
+
+<p>A simple <code>\s</code> specifies "white space", the same as
+the character class <code>[ \t\n\r\f]</code> (blank, tab,
+newline, carriage return,form-feed).  A character may be
+specified in hexadecimal as a <code>\x</code> followed by two
+hexadecimal digits; \x1b is the ESC character.
+
+</p><p>A vertical bar | specifies "or".
+
+</p><pre>    if ($answer =~ /^y|^yes|^yeah/i ) {
+         print "Affirmative!";
+    }</pre>
+
+prints "Affirmative!" for $answer equal to "y" or "yes" or "yeah" (or
+"Y", "YeS", or "yessireebob, that's right").
+
+<a name="parsing" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>13. Parsing</h2></a>
+
+See the <cite>Perl Reference Guide</cite> section 14, Search and
+replace functions.  When you include parenthesis ( ) in a matched
+string, the matching text in the parenthesis may subsequently be
+referenced via variables $1, $2, $3, ...  for each left
+parenthesis encountered.  These matches can also be assigned as
+sequential values of an array.
+
+<pre>    #!/usr/local/bin/perl -w
+    $s = 'There is 1 date 10/25/95 in here somewhere.';
+    print "\$s=$s\n";
+    $s =~ /(\d{1,2})\/(\d{1,2})\/(\d{2,4})/;
+    print "Trick 1: \$1=$1, \$2=$2, \$3=$3,\n",
+	  "         \$\`=",$`," \$\'=",$',"\n";
+    
+    ($mo, $day, $year) =
+        ( $s =~ /(\d{1,2})\/(\d{1,2})\/(\d{2,4})/ );
+    print "Trick 2: \$mo=$mo, \$day=$day, \$year=$year.\n";
+    
+    ($wholedate,$mo, $day, $year) =
+        ( $s =~ /((\d{1,2})\/(\d{1,2})\/(\d{2,4}))/ );
+    print "Trick 3: \$wholedate=$wholedate, \$mo=$mo, ",
+        "\$day=$day, \$year=$year.\n";</pre>
+
+<p><em>Results of above:</em>
+</p><pre>    $s=There is 1 date 10/25/95 in here somewhere.
+    Trick 1: $1=10, $2=25, $3=95,
+             $`=There is 1 date  $'= in here somewhere.
+    Trick 2: $mo=10, $day=25, $year=95.
+    Trick 3: $wholedate=10/25/95, $mo=10, $day=25, $year=95.</pre>
+
+Note that when patterns are matched in an array context as in
+Tricks 2 and 3, $1, $2, ..., and $`, $', and $&amp; are not set.
+
+<p><em>Regular expressions are greedy.</em>  In the following
+example we try to match whatever is between "&lt;" and "&gt;" :
+</p><pre>    #!/usr/local/bin/perl -w
+    $s = 'Beware of &lt;STRONG&gt;greedy&lt;/strong&gt; regular expressions.';
+    print "\$s=$s\n";
+    ($m) = ( $s =~ /&lt;(.*)&gt;/ );
+    print "Try 1: \$m=$m\n";
+    ($m) = ( $s =~ /&lt;([^&gt;]*)&gt;/ );
+    print "Try 2: \$m=$m\n";</pre>
+
+<em>This results in:</em>
+
+<pre>    $s=Beware of &lt;STRONG&gt;greedy&lt;/strong&gt; regular expressions.
+    Try 1: $m=STRONG&gt;greedy&lt;/strong
+    Try 2: $m=STRONG</pre>
+
+<h3>Homework: Parsing and Reporting</h3>
+
+<p>1.  See preceding "Grade Book" example.  Using the same
+"stufile" input, print a list of students ordered by family name,
+with any quoted nickname listed in place of the given name, and
+family name last.  Produce output like this:
+</p><pre>    Student-ID  Year  Name
+    357913      JR    Thomas Jefferson
+    246802      SO    Abe Lincoln
+    212121      SO    Teddy Roosevelt
+    123456      SR    George Washington</pre>
+
+<a name="cgi" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>14. Simple CGI</h2></a>
+
+<p>For an introduction to Common Gateway Interface, see <a href="http://hoohoo.ncsa.uiuc.edu/cgi/">
+http://hoohoo.ncsa.uiuc.edu/cgi/</a> and <a href="http://www.ncsa.uiuc.edu/SDG/Software/Mosaic/Docs/fill-out-forms/overview.html">
+http://www.ncsa.uiuc.edu/SDG/Software/Mosaic/Docs/fill-out-forms/overview.html
+</a>.
+
+</p><h3>Example:  Server Status Report</h3>
+Let's start with a CGI program that takes no input but produces output.
+The following Perl program reports the load on the Web
+server, using the standard Unix commands "hostname", 
+"uptime", and "w".  The output would look something like this:
+
+<p></p><center><table border="1" cellpadding="10" cellspacing="0" bgcolor="#F2F2F2"><tbody><tr><td>
+<center><strong>What's Happening at sgi1</strong></center>
+<blockquote>7:09pm  up 1 day, 18:38,  4 users,  load average: 0.08, 0.21, 0.53</blockquote>
+
+<pre>    c676828  q0  128.206.58.85       3  pico
+    c676828  ftp UNKNOWN@128.20         -
+    ccgreg   q1  monad.missouri         tcsh
+    c552997  q5  mizzou-ts2.mis         telnet
+</pre>
+</td></tr></tbody></table></center>
+
+<p>Here's the program that produced it:
+</p><pre>    #!/usr/local/bin/perl
+    # Send error messages to the user, not system log
+    open(STDERR,'&lt;&amp;STDOUT');  $| = 1;
+  
+    # Headers terminate by a null line:
+    print "Content-type: text/html\n\n";
+    $host = `hostname`;
+    chop $host;
+    $uptime = `uptime`;
+    $w = `w -s -h`; 
+    print &lt;&lt;BUNCHASTUFF;
+    &lt;HTML&gt;&lt;HEAD&gt;
+    &lt;TITLE&gt;$host Status&lt;/TITLE&gt;
+    &lt;/HEAD&gt;&lt;BODY&gt;
+    &lt;H1&gt;What's Happening at $host&lt;/H1&gt;
+    $uptime
+    &lt;PRE&gt;$w&lt;/PRE&gt;
+    &lt;HR&gt;
+    &lt;/BODY&gt;&lt;/HTML&gt;
+    BUNCHASTUFF
+    exit;</pre>
+
+<p>Suppose user "bitman" wants to store this program on MU's SHOWME and SGI webservers, which use the "Apache" server software, configured for "CGI anywhere".
+If bitman doesn't already have a web directory, he should create one with these Unix commands:
+</p><pre>    mkdir ~/www; chmod a+x ~ ~/www</pre>
+Then the above program could be put in a file <code>~/www/status.cgi</code>, 
+and that file made readable and executable:
+<pre>    chmod a+rx ~/www/status.cgi</pre>
+<p>On the SHOWME server, the program would then be referenced as:
+<code>http://www.missouri.edu/~bitman/status.cgi</code>
+</p><h3>Example:  Web Form</h3>
+Here is the image of a World Wide Web Electronic Form:
+<p></p><center><table width="79%" border="1" cellpadding="10" cellspacing="0" bgcolor="#F2F2F2"><tbody><tr><td>
+<strong>Web Form Example</strong>
+<p>(From http://some.webserver.missouri.edu/~user/myform.cgi)
+</p><form method="POST" action="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/this-is-just-an-example">
+<pre>Enter your ID Number:  <input name="idnum">
+Enter your Name:       <input name="name">   
+Select favorite Color: <select name="color">
+<option>red</option><option>green</option><option>blue
+</option></select>
+</pre>
+To submit the query, press this button: 
+<input type="submit" value="Submit Request">
+</form>
+</td></tr></tbody></table></center>
+<p>
+When something is entered and the submit button pressed, here is
+a resulting screen:
+</p><p></p><center><table width="79%" border="1" cellpadding="10" cellspacing="0" bgcolor="#F2F2F2"><tbody><tr><td>
+
+<center><strong>Results of Form</strong></center>
+<p>(From http://some.webserver.missouri.edu/cgi-bin/myform)
+</p><p>Your ID Number is 196965, your name is G. K. Johnson,
+and your favorite color is green.
+<br>_____________________________________________________</p><p>
+[<a href="http://www.cs.memphis.edu/cgi-bin/myform">Try again</a>]
+</p></td></tr></tbody></table></center>
+
+<h3>Perl Program to Generate and Process Form</h3>
+Here is the Perl program that generates both the form and the response.
+It uses an external module called "cgi-lib.pl" that is available from
+network Perl archives such as 
+<a href="http://cgi-lib.stanford.edu/">
+http://cgi-lib.stanford.edu</a><a> or
+a </a><a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/cgi-lib.pl">local copy</a>.
+
+<pre>    #!/usr/local/bin/perl
+    # Send error messages to the user, not system log
+    open(STDERR,'&lt;&amp;STDOUT');  $| = 1
+    require "cgi-lib.pl";  # Get external subroutines
+    print &amp;PrintHeader;
+    
+    $script = $ENV{'SCRIPT_NAME'};
+    $webserver = $ENV{'SERVER_NAME'};
+    
+    if (! &amp;ReadParse(*input)) { &amp;showform }
+    else { &amp;readentries }
+    exit;
+
+    sub showform {
+    # If there is no input data, show the blank form
+
+    print &lt;&lt;EOF;
+    &lt;HTML&gt;&lt;HEAD&gt;
+    &lt;TITLE&gt;Form Example, Part 1&lt;/TITLE&gt;
+    &lt;/HEAD&gt;&lt;BODY&gt; 
+    &lt;H1&gt;Web Form Example&lt;/H1&gt;
+    &lt;P&gt;(From http://$webserver$script)
+    &lt;FORM METHOD="POST" 
+	ACTION=$script&gt;
+    &lt;PRE&gt;
+    Enter your ID Number:  &lt;INPUT NAME=idnum&gt;
+    Enter your Name:       &lt;INPUT NAME=name&gt;   
+    Select favorite Color: &lt;SELECT NAME=color&gt;
+    &lt;OPTION&gt;red&lt;OPTION&gt;green&lt;OPTION&gt;blue
+    &lt;/SELECT&gt;
+    &lt;/PRE&gt;
+    To submit the query, press this button: 
+    &lt;INPUT TYPE=submit VALUE="Submit Request"&gt;
+    &lt;/FORM&gt;
+    &lt;/BODY&gt;&lt;/HTML&gt;
+    EOF
+    } # End of sub showform #
+    
+    sub readentries {
+    # Input data was detected.  Echo back to form user.
+
+    print &lt;&lt;EOF;
+    &lt;HTML&gt;&lt;HEAD&gt;
+    &lt;TITLE&gt;Form Example, Part 2&lt;/TITLE&gt;
+    &lt;/HEAD&gt;&lt;BODY&gt;
+    &lt;H1&gt;Results of Form&lt;/H1&gt;
+    &lt;P&gt;(From http://$webserver$script)
+    &lt;P&gt;Your ID Number is $input{'idnum'}, your name is $input{'name'},
+    and your favorite color is $input{'color'}.
+    &lt;HR&gt;
+    [&lt;A HREF=$script&gt;Try again&lt;/A&gt;]
+    EOF
+    } # end of sub readentries #
+</pre>
+
+<a name="testing" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h2>15. Testing Perl Programs</h2></a>
+
+<p>Use the compiler <code>-w</code> switch to warn about
+identifiers that are referenced only once, uninitialized scalars,
+redefined subroutines, undefined file handles, probable confusion
+of "==" and "eq", and other things.  This can be coded in the
+magic cookie first line:
+
+</p><pre>    #!/usr/local/bin/perl -w</pre>
+<p>As you write your program, put in <code>print</code>
+statements to display variables as you proceed.  Comment "#" them
+out when you feel you don't need to see their output.
+
+</p><p>CGI scripts require some special attention in testing.
+  
+</p><p>MU's "showme" and "SGI" Web servers (www.missouri.edu and 
+www.cclabs.missouri.edu) use the Apache "sucgi" facility.  
+This causes CGI programs stored under your directory ~/www/ 
+with file name ending ".cgi" to execute as your own ID. 
+On some other Web server the script does not execute under 
+your login ID!  It executes under 
+the ID of the Web server, typically as user "nobody". 
+
+</p><p>Thus a script that works at the command line may fail 
+under the Web server because: 
+
+</p></li><li>The path for executables or Perl library might be inappropriate.
+Print $ENV{'PATH'} and @INC to see if there's a difference.
+Fix it with Perl statements like:
+<pre>    $ENV{'PATH'} .= ':~myid/bin:~myid/cgibin';
+    push @INC,'~myid/lib/perl';</pre>
+
+</li><li>File permissions give your ID access don't
+give the Web server appropriate access.
+
+<a name="goofs" href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html#contents"><h3>16. Common Goofs for Novices</h3></a>
+
+Adapted from <cite>Programming Perl</cite>, page 361.
+<ol>
+<li>Testing "all-at-once" instead of incrementally, either
+bottom-up or top-down.
+</li><li>Optimistically skipping <code>print</code> scaffolding to
+dump values and show progress.
+</li><li>Not running with the <code>perl -w</code> switch to catch
+obvious typographical errors.
+</li><li>Leaving off <code>$</code> or <code>@</code> or
+<code>%</code> from the front of a variable, or omitting &amp; when invoking a subroutine in Perl 4.
+</li><li>Forgetting the trailing semicolon.
+</li><li>Forgetting curly braces around a block.
+</li><li>Unbalanced (), {}, [], "", '', ``, and sometimes &lt;&gt;.
+</li><li>Mixing '' and "", or / and \.
+</li><li>Using <code>==</code> instead of <code>eq</code>,
+<code>!=</code> instead of <code>ne</code>, <code>=</code> instead of <code>==</code>, etc. <code>('White' == 'Black')</code> and 
+<code>($x = 5)</code> evaluate as <code>(0 == 0)</code> and 
+<code>(5)</code> and thus are true!
+</li><li>Using "else if" instead of "elsif".
+</li><li>Not chopping the output of backquotes <code>`date` </code>
+or not chopping input:
+<pre>    print "Enter y to proceed: ";
+    $ans = &lt;STDIN&gt;;
+    <em>chop $ans;</em>
+    if ($ans eq 'y') { print "You said y\n";}
+    else { print "You did not say 'y'\n";}
+</pre>
+</li><li>Putting a comma after the file handle in a print
+statement.
+</li><li>Forgetting that Perl array subscripts and string indexes
+normally start at 0, not 1.
+</li><li>Using $_, $1, or other side-effect variables, then modifying
+the code in a way that unknowingly affects or is affected by these.
+</li><li>Forgetting that regular expressions are greedy, seeking the
+longest match not the shortest match.
+</li></ol>
+<hr>
+<em>
+This HTML document and the Postscript derived from it may be freely copied and adapted, so long as appropriate credit is given to MU Information &amp; Access Technology Services. Anything less or anything more would not be the Perl Way. I solicit your suggestions and comments!<br>
+Special thanks to Hugo van der Sanden for corrections.<br>
+  - <a href="http://www.cclabs.missouri.edu/~ccgreg">Greg Johnson</a>
+  - JohnsonG@missouri.edu</em><p> 
+
+Published by:  <a href="http://www.missouri.edu/iats">MU Information &amp; Access Technology Services</a>
+  -  Webmaster  &lt;webmaster@www.missouri.edu&gt;<br><br> 
+
+</p></li></body></html>
