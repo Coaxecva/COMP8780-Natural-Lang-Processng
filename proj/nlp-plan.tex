@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{blkarray}
+\usepackage{multirow}
+\usepackage[labelfont=bf]{caption}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+
+\begin{document}
+
+\title{NLP7-8780 Project: \textbf{Latent Semantic Analysis for Classifying Genomic Sequences}}
+\author{Instructor: Dr. Vasile Rus \\ Student: Quang Tran}
+\date{Spring 2017}
+\maketitle
+
+
+\section{Introduction}
+
+\subsection{Latent Semantic Analysis}
+Latent Semantic Analysis (LSA) is a technique in natural language processing, in particular distributional semantics, of analyzing relationships between a set of documents and the terms they contain by producing a set of concepts related to the documents and terms. In the field of information retrieval, LSA techniques are used to identify text
+documents with related underlying concepts. In this project, we extend these approaches to infer the biological structure through which a collection of organisms are related; we would like to identify and partition evolutionarily similar genomic sequences.
+
+\subsection{Genomic K-mer Sequences}
+The term k-mer typically refers to all possible subsequences of length k that are contained in a larger sequence. For instance, we can say ATGCCCATTA is a k-mer of length 10 or a "10-mer". And this "10-mer" contains the 4-mers: ATGC, TGCC, GCCC, CCCA, CCAT, CATT, and ATTA. Since the nucletotides in DNA contain four different bases: A, T, G, and C, these 4-mers above are just a small subset of the $4^k = 4^4 = 256$ possible k-mers.
+
+\subsection{Bag-of-k-mers Model}
+A DNA sequences can be hypothesized by some statistical presentation of the k-mers from which it was comprised. LSA techniques are based on the bag-of-words model for prepresenting text documents By treating k-mers as the words, we modify the original model to bag-of-k-mers model in genetic language. 
+
+\section{Project Plan}
+
+\begin{itemize}
+	\item Week 1: Study LSA, implement LSA in python
+	\item Week 2: Collect genomic data, compute k-mers on data
+	\item Week 3: Integrate LSA methods to biological data
+	\item Week 4,5,6: Implement and improve the integration
+	\item Week 7: Finalize the proposed method, revise project report
+	\item Week 8: Review overall
+\end{itemize}
+
+\nocite{vrus2017}
+\nocite{martin2000speech}
+\nocite{landauer1998introduction}
+\nocite{dumais2004latent}
+ 
+\bibliography{test}
+\bibliographystyle{ieeetr}
+
+%\begin{thebibliography}{9}
+
+%\bibitem{Baeza-Yates99} 
+%Ricardo Baeza-Yates and Berthier Ribeiro-Neto. 
+%\textit{Modern Information Retrieval}. 
+%1999.
+
+%\end{thebibliography}
+
+
+\end{document}
