@@ -7,6 +7,13 @@ fname = sys.argv[1]
 k = sys.argv[2]
 
 
+items = []
+for line in file:
+    if line.startswith('>'):
+        read = file.readline()
+        items.append(read)
+
+
 def ReadFile(fn):
 	content = ""
 	with open(fn) as f:
