@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0045)http://www.cs.memphis.edu/~vrus/teaching/nlp/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <title>NLP at Institute for Intelligent Systems/The University of Memphis</title>
+  <meta content="Vasile Rus" name="author">
+  <meta content="Natural Language Processing" name="description">
+</head>
+<body>
+<p class="MsoNormal"><br>
+</p>
+<table style="width: 45%; text-align: left;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-family: Helvetica;"><img src="./NLP at Institute for Intelligent Systems_The University of Memphis_files/header-UofM.gif" v:shapes="_x0000_i1035" border="0" height="16" width="166"></span></td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><span style="font-family: Helvetica;"><img src="./NLP at Institute for Intelligent Systems_The University of Memphis_files/header-cas.gif" v:shapes="_x0000_i1036" border="0" height="16" width="210"></span></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">
+      <h3><span style="font-family: Helvetica;"><span style="text-decoration: underline;"><img alt="Institute for Intelligent Systems" src="./NLP at Institute for Intelligent Systems_The University of Memphis_files/logo-iis.jpg" style="width: 288px; height: 95px;"></span></span></h3>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">
+      <h3><span style="font-family: Helvetica;"><span style="text-decoration: underline;"><img alt="Department of Computer Science" src="./NLP at Institute for Intelligent Systems_The University of Memphis_files/cs_logo.jpg" style="width: 182px; height: 127px;"></span></span></h3>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br style="font-family: times new roman,times,serif;">
+<table class="MsoNormalTable" style="width: 100%; font-family: times new roman,times,serif;" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody>
+    <tr style="">
+      <td style="padding: 0in;" valign="top">
+      <h2><span style="text-transform: uppercase;"><!--BEGIN PAGE CONTENT
+  HERE--><span style="color: rgb(204, 0, 0);">Natural
+Language Processing</span><br style="color: rgb(204, 0, 0);">
+      </span></h2>
+      <h3><span style="text-transform: uppercase;"><span style="color: rgb(204, 0, 0);">Prof. Vasile Rus</span></span></h3>
+      <h3><span style="text-transform: uppercase;"> <span style="color: rgb(204, 0, 0);">Course # COMP/PSYC7/8780 -
+Spring 2017</span> <o:p></o:p></span></h3>
+      <p class="footer"><a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/#announcements"><span style="">Announcements</span></a> | <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/#courseinfo"><span style="">Course Information</span></a> | <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/#schedule"><span style="">Schedule</span></a>
+      </p>
+      </td>
+      <td style="padding: 0in;" valign="top">
+      <p class="MsoNormal"><img src="./NLP at Institute for Intelligent Systems_The University of Memphis_files/tiger.jpg" border="0" height="105" width="123"></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-family: times new roman,times,serif;" class="MsoNormal"><o:p><br>
+</o:p></p>
+<div class="MsoNormal" style="text-align: center; font-family: times new roman,times,serif;" align="center">
+<hr align="center" color="#aca899" noshade="noshade" size="2" width="100%"></div>
+<h3 style="font-family: times new roman,times,serif;"><a name="announcements"></a><span style="text-transform: uppercase;"><span style="color: rgb(204, 0, 0);">Announcements</span><o:p></o:p></span></h3>
+<ul style="font-family: times new roman,times,serif;" type="disc">
+
+<li class="MsoNormal" style="color: black;"><span style="color: green;">04/15/17</span> Project delivery schedule: 11AM-12PM (Alshaikh, Mahfouz, Pham, Al Rousan, Tamang, Tran), 12pm-1:00PM (Akther, Fang, Maharjan, Naidu, Qi, Tackett, Venkata, Kelly).<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">04/15/17</span> Project delivery will take place on Tuesday, May 2nd, 11AM-1PM in my office 323 Dunn Hall. Please prepare a report that should have the following sections: Introduction, Background and Related Work, Approach, Implementation Details, Results, and Future Work. I will post a schedule about the order in which you need to show up.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">03/29/17</span> Schedule for 8000-level student presentations is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/PhD-presentations.txt">here</a>.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">03/23/17</span> Midterm project report due on 3/30 (2-3 pages; please provide the link to your log).<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">03/16/17</span> For HW#4, you only need to submit the first problem by 3/16. We will cover head words after the midterm, which is what you need for problem #2.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">02/07/17</span> Project: Please send me a 2-page document describing your project plans; make sure you include a timeline and keep a log in a Google Doc that you can give me access to and update weekly.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">01/29/17</span> New DUE date for Hw1: Feb 7.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">01/29/17</span> Here's a list of suggested topic presentations: machine translation, natural language normalization, text polarity, text sentiment analysis, text-based humor processing, text simplification, coreference resolution, natural language generation, named entity recognition.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">01/24/17</span> Sambriddhi Mainali is our grader.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">01/17/17</span> Students in the 8000 level section must choose a topic to present. Please send me the title of your topic and a short paragraph describing it by Jan 31.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">01/17/17</span> Syllabus is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/Syllabus_COMP7-8780_Spring_2017_Vasile_Rus.pdf">here</a>.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">01/17/17</span> Welcome to the exciting topic of Natural Language Processing/Computational Linguistics/Intelligent Text Processing.<o:p></o:p></li>
+<li class="MsoNormal" style="color: black;"><span style="color: green;">01/17/17</span> Please bookmark this page (<a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/">http://www.cs.memphis.edu/~vrus/teaching/nlp/</a>).<o:p></o:p></li>
+</ul>
+<div class="MsoNormal" style="text-align: center; font-family: times new roman,times,serif;" align="center">
+<hr align="center" color="#aca899" noshade="noshade" size="2" width="100%"></div>
+<p style="font-family: times new roman,times,serif;"><a name="courseinfo"></a><b style="color: rgb(255, 102, 102);">Welcome!</b>
+The class introduces computational techniques for understanding,
+learning, and generating Natural Language with an emphasis on
+algorithms and software tools. It will cover tokenization - the
+separation of words from other items in written text such as commas,
+lexical semantics - the study of individual words, syntax - how words
+group together in more complex language structures, semantics - what
+the meaning of a sentence is, and pragmatics - what the meaning of a
+sentence is given the surrounding discourse context. The course will
+introduce both relational and statistical approaches to NLP, expose
+students to state-of-the-art tools and technologies and their impact
+on a variety of applications. It will also provide insights to open
+problems in the field.
+</p>
+<p style="font-family: times new roman,times,serif;"><b style="color: rgb(255, 102, 102);">Course catalog
+entry</b><span style="color: rgb(255, 102, 102);">:</span> <span style="">
+It presents computational aspects, algorithms and techniques, for
+human language processing. Major topics covered are lexical analysis,
+syntactic parsing, semantics, word sense disambiguation, logic forms,
+dialogue and pragmatics. Applications covered include question
+answering, information extraction and others. Prerequisites: COMP6040
+or COMP6041 or with the permission of instructor.
+PREREQUISITE: COMP6040 or COMP6041 or with permission of instructor.
+</span></p>
+<table class="MsoNormalTable" style="border: 1pt outset ; font-family: times new roman,times,serif;" border="1" cellpadding="0">
+  <tbody>
+    <tr style="">
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><b>Lectures:</b><o:p></o:p></p>
+      </td>
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal">TR 11:20-12:45 PM, DH119<o:p></o:p></p>
+      </td>
+    </tr>
+    <tr style="">
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><b>Prof:</b><o:p></o:p></p>
+      </td>
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><a href="http://www.cs.memphis.edu/~vrus">Vasile
+Rus</a> - <img src="./NLP at Institute for Intelligent Systems_The University of Memphis_files/email.gif" border="0" height="16" width="123"> <o:p></o:p></p>
+      </td>
+    </tr>
+    <tr style="">
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><b>TA:</b><o:p></o:p></p>
+      </td>
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"> Sambriddhi Mainali - smain ali @memphis.edu<o:p></o:p></p>
+      </td>
+    </tr>
+    <tr style="">
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><b>Office Hours</b><o:p></o:p></p>
+      </td>
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><i>For Prof:</i> TR 10:00-11:00 AM, or by
+appt, in FIT403c<br>
+      For TA: TTh 1:15-2:15PM, DH247 <o:p></o:p></p>
+      </td>
+    </tr>
+    <tr style="">
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><b>Web page:</b><o:p></o:p></p>
+      </td>
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/">http://www.cs.memphis.edu/~vrus/teaching/nlp/</a><o:p></o:p></p>
+      </td>
+    </tr>
+    <tr style="">
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><b>Textbook:</b><o:p></o:p></p>
+      </td>
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><a href="http://www.cs.colorado.edu/~martin/slp.html">Jurafsky &amp;
+Martin <i style="">Speech and Language Processing</i> </a> (required)
+      <br>
+Manning &amp; Schutze <i style="">Foundations of Statistical Natural Language Processing</i> <o:p></o:p></p>
+      </td>
+    </tr>
+    <tr style="">
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><b>Policies:</b><o:p></o:p></p>
+      </td>
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><i>Grading:</i> assignments - 30%, project -
+35%, midterm - 15%, final - 15%, Class Participation - 5% <br>
+      <i>Submission:</i> see first lecture <br>
+      <i>Lateness:</i> see first lecture <br>
+      <i>Plagiarism:</i> see first lecture <br>
+      <i>Intellectual engagement:</i> see first lecture <br>
+      <i>Announcements:</i> Come to class and read this page!<o:p></o:p></p>
+      </td>
+    </tr>
+    <tr style="">
+      <td style="padding: 2.25pt;" valign="top">
+      <p class="MsoNormal"><b>Similar<br>NLP courses:</b><o:p></o:p></p>
+      </td>
+      <td style="padding: 2.25pt;" valign="top">
+      <table class="MsoNormalTable" style="" border="0" cellpadding="0">
+        <tbody>
+          <tr style="">
+            <td style="padding: 2.25pt;" valign="top">
+            <p class="MsoNormal">Some of the course slides are more or less
+ adapted from the courses below.<br><a href="http://www.cs.ualberta.ca/~lindek/650/index.htm">Dekang Lin</a><br>
+            <a href="http://www.cs.jhu.edu/~jason/465/">Jason Eisner</a><br>
+            <a href="http://www.cs.cornell.edu/courses/cs674/2004sp/">Lilian
+Lee</a><br>
+            <a href="http://www.informatics.sussex.ac.uk/courses/nlp/">John
+Carroll</a><br>
+            <a href="http://min.ecn.purdue.edu/~ee669/lecture.html">Mary
+Harper</a><o:p></o:p></p>
+            </td>
+            <td style="padding: 2.25pt;" valign="top">
+            <p class="MsoNormal"><br><a href="http://www.cs.unt.edu/~rada/CSCE5290/">Rada Mihalcea</a> <br>
+            <a href="http://www.umiacs.umd.edu/~bonnie/courses/cmsc723-04/">Bonnie
+Dorr </a><br>
+            <a href="http://www.sims.berkeley.edu/courses/is290-2/f04/sched.html">Marti
+Hearst </a><br>
+            <a href="http://cswww.essex.ac.uk/staff/poesio/cc437/">Massimo
+Poesio</a> <br>
+            <a href="http://www.dcs.shef.ac.uk/~mlap/teaching/com3110.html">Mirella
+Lapata</a> <o:p></o:p></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="MsoNormal"><o:p></o:p></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-family: times new roman,times,serif;" class="MsoNormal"><a name="footnote-1"></a><o:p>&nbsp;</o:p></p>
+<div class="MsoNormal" style="text-align: center; font-family: times new roman,times,serif;" align="center">
+<hr align="center" color="#aca899" noshade="noshade" size="2" width="100%"></div>
+
+<span style="font-weight: bold;">Assignments:</span> In general, you
+get 50% of the grade for correctness and robustness and 50% for
+quality of the solution, documentation and style. Assignments should be
+written clearly and if code is required the code shoud follow at least
+the Recommended standard below.<br>
+<br>
+<table style="width: 76.68%; text-align: left;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold; background-color:
+ rgb(255, 204, 204);">Code Style Standard</td>
+      <td style="vertical-align: top; background-color: rgb(255, 204, 204);"><a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/codingStyle.html">Recommended</a><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr align="center" color="#aca899" noshade="noshade" size="2" width="100%">
+
+<br style="font-weight: bold;"> <span style="font-weight:
+ bold;">Plagiarism/Cheating Policy:</span><big><b><u><font face="Times New Roman" size="2"><big><span style=""></span></big></font></u></b></big>
+Plagiarism or cheating behavior in any form is
+unethical and detrimental to proper education and will not be
+tolerated. All work submitted by student (projects, programming
+assignments, lab assignments, quizzes, tests etc.) is expected to be a
+student's own work. The plagiarism is incurred when any part of
+anybody else's work is passed as your own (no proper credit is listed
+to the sources in your own work) so the reader is led to believe it is
+therefore your own effort. Students are allowed and encouraged to
+discuss with each other and look up resources in the literature
+(including the internet) on their assignments, but appropriate
+references must be included for the materials consulted, and
+appropriate citations made when the material is taken verbatim.
+<font face="Times New Roman" size="3"><span style=""></span></font><br>
+<div class="Section1"><font face="Times New Roman" size="3"><span style=""><br>
+If plagiarism
+or cheating occurs, the student will receive a failing grade on the
+assignment
+and (at the instructor discretion) a failing grade in the course.The
+course
+instructor may also decide to forward the incident on to University
+Judicial
+Affairs Office for further disciplinary action.</span></font><big>
+
+<br><br>
+</big><font face="Times New Roman" size="3"><span style="">For further
+information on U of M code of student conduct and academic
+</span></font><font face="Times New Roman" size="3"><span style="">discipline
+procedures, please refer to:&nbsp; </span></font><a href="http://www.people.memphis.edu/~jaffairs/">http://www.people.memphis.edu/~jaffairs/</a>.<br>
+</div>
+
+<hr align="center" color="#aca899" noshade="noshade" size="2" width="100%">
+
+<h3 style="font-family: times new roman,times,serif;"><a name="schedule"></a><span style="text-transform: uppercase; color: rgb(255, 102, 102);">Tentative
+Schedule<o:p></o:p></span></h3>
+<p style="font-family: times new roman,times,serif;">You may find
+lectures and assignments here! Lectures are compiled from different
+sources including personal notes, textbooks, materials
+used in related classes on Natural Language Processing at famous
+universities and other materials.<o:p></o:p></p>
+<table class="MsoNormalTable" style="width: 76.68%; font-family: times new roman,times,serif;" border="0" cellpadding="0" cellspacing="1" width="76%">
+  <tbody>
+    <tr style="height: 13.7pt;">
+<!-- Row 1 --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p style="background-color: rgb(153, 0, 0);" class="MsoNormal"><span style="color: white;">Week</span><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"><span style="color: white;">Tuesday</span><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"><span style="color: white;">Thursday</span><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><st1:city w:st="on"><st1:place w:st="on"><span style="color: white;">Readings &amp; Assignments</span></st1:place></st1:city><o:p></o:p></p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row 2 --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top"> <span style="color: rgb(255, 255, 255);">1/17,1/19</span><br>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+	Introduction <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-1.ppt">[PPT]</a><p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> 
+Introduction <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-1.ppt">[PPT]</a></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">
+      Chapter 1,3&amp;4 J&amp;M<br>
+      Lilian Lee's <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/cstb.pdf">I'am Sorry Dave, I can't do that!</a>
+      <a href="http://www.tartarus.org/~martin/PorterStemmer">Porter's stemmer</a>
+      <o:p>&nbsp;</o:p></p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row 3 --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">1/24,1/26</span><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Introduction to Perl <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-2.perl.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Introduction to Perl <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-2.perl.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">Short introduction to Perl is available <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/perlcourse.html">here</a><br>
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/regexp.pdf">Regular Expressions: HOWTO</a><br>
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/assignments/assignment-01.txt"> Assignment #1</a><br>
+     </p></td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row 4 --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">1/31,2/2</span><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Word, Morphology, Stemming <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-3.ppt">[PPT]</a></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Word, Morphology, Stemming <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-3.ppt">[PPT]</a></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      Chapter 3,4&amp;5 J&amp;M<br>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">2/7,2/9</span><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Word, Morphology, Stemming <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-3.ppt">[PPT]</a></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Part-of-Speech Tagging <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-4.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      Chapter 3,4&amp;5 J&amp;M<br>
+      Eric Brill's paper on TBL tagger is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/TAGGING_ADVANCES.pdf">here</a><br>
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/SnapshotBROWN.pos.all.txt">Snapshot of the BROWN file</a><br>
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/BROWN.pos.all.tgz">BROWN file compressed</a><br>
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/assignments/assignment-02.txt">Assignment #2</a><br>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">2/14,2/16</span><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Part-of-Speech Tagging <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-4.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal">Language Modeling, N-grams <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-5.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">
+      Chapter 4 J&amp;M <br>
+      </p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">2/21,2/23</span><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal">HMM tagging <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-6.hmm.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal">Syntax and Grammar <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-7.cfg.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">
+      Chapter 5&amp;6 J&amp;M<br>
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/assignments/assignment-03.txt">Assignment #3</a>
+      </p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">2/28,3/2<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> CFG and Parsing Algorithms <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-8.parsing.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Probabilistic CFG and parsing <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-9.prob-parsing.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">Chapters 12,13&amp;14 J&amp;M<o:p>&nbsp;</o:p> <br>
+      Parsing Evaluation paper is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/ACS-Proofs.pdf">here</a>
+      Collins' paper is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/collins.pdf">here</a>
+      </p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">3/7,3/9<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+        NO CLASS - SPRING BREAK 
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+	NO CLASS - SPRING BREAK
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">
+      Chapters 15 J&amp;M <br>
+      Minipar paper is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/minipar_evaluation.pdf">here</a>
+      <o:p>&nbsp;</o:p></p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">3/14,3/16<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Probabilistic CFG and parsing <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-9.prob-parsing.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> REVIEW <o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">3/21,3/23<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> MIDTERM 
+      </p></td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Unification Grammar <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-10.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">
+      Chapters 19 J&amp;M <br>
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/assignments/assignment-04.txt">Assignment #4</a><br>
+      WordNet paper in Transactions of the ACM is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/miller95.pdf">here</a></p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">3/28,3/30<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Lexical Semantics <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-11.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Lexical Semantics <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-11.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">
+      Chapters 19 J&amp;M <br>
+      </p></td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">4/4,4/6<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Latent Semantic Analysis <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-12.lsa.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Logic Form <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-12.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"></p>
+      Chapters 17&amp;18 in J&amp;M
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">4/11,4/13<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Information Extraction and Question Answering <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-13.ie-qa.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Information Extraction and Question Answering <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-13.ie-qa.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/assignments/assignment-05.txt">Assignment #5</a><br>
+      Chapters 22&amp;23 in J&amp;M</p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">4/18,4/20<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Summarization <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-15.summ.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"> Project Presentations <o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal">
+      Lasso paper is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/Lasso.ps">here</a><br>
+      <!--Subjectivity Presentation <a href="lectures/SubjectivityandSentimentAnalysis.ppt">[PPT]</a><br>-->
+      Logic Form paper is <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/ictai2001.ps">here</a><br>
+      </p></td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">4/25,4/27<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      <p class="MsoNormal"> Project Presentations, Review <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/lectures/nlp.session-15.summ.ppt">[PPT]</a><o:p></o:p></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      NO CLASS - STUDY DAY
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 102, 102) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      Look up the two (relatively old) Tutorials on Summarization
+      given by Hovy (ISI) and Radev (Michigan).<br>
+      <a href="http://www.cs.memphis.edu/~vrus/teaching/nlp/papers/summarization-radev-lprj.pdf">LexRank</a> paper<br>
+      Chapter 23 in J&amp;M<p></p>
+      </td>
+    </tr>
+    <tr style="height: 13.7pt;">
+<!-- Row --> <td style="padding: 3pt; background: rgb(153, 0, 0) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 13.7pt;" valign="top">
+      <p class="MsoNormal"><span style="color: white;">5/2,5/4<o:p></o:p></span></p>
+      </td>
+      <td style="padding: 3pt; background: rgb(255, 204, 204) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 23.5%; height: 13.7pt;" valign="top" width="23%">
+      FINALS WEEK
+      </td>
+      <td style="padding: 3pt; none; width: 26.92%; height: 13.7pt;" valign="top" width="26%">
+      <p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+      </td>
+      <td style="padding: 3pt; height: 13.7pt;" valign="top">
+      <p><i><span style="color: green;">Final exam is R 5/4, 8:00AM-10:00AM ---&gt;</span></i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-family: times new roman,times,serif;" class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<!-- Row -->
+<div class="MsoNormal" style="text-align: center; font-family: times new roman,times,serif;" align="center">
+<hr align="center" color="#aca899" noshade="noshade" size="2" width="100%"></div>
+<p class="footer"><span style="font-family: times new roman,times,serif;">Department of
+ Computer Science</span><br style="font-family: times new roman,times,serif;" clear="all">
+<span style="font-family: times new roman,times,serif;">The University
+of Memphis</span><br style="font-family: times new roman,times,serif;">
+<span style="font-family: times new roman,times,serif;">Dunn Hall Room
+320</span><br style="font-family: times new roman,times,serif;">
+<span style="font-family: times new roman,times,serif;">Memphis, TN
+38120</span><br style="font-family: times new roman,times,serif;">
+<span style="font-family: times new roman,times,serif;">(901) 678-5259
+(phone)</span><br style="font-family: times new roman,times,serif;">
+<span style="font-family: times new roman,times,serif;">(901) 678-2480
+(fax)</span><br style="font-family: times new roman,times,serif;">
+<br style="font-family: times new roman,times,serif;">
+<span style="font-family: times new roman,times,serif;">Page
+maintainer: </span><a style="font-family: times new roman,times,serif;" href="mailto:CHANGE-HERE@memphis.edu"><span style=""><img src="./NLP at Institute for Intelligent Systems_The University of Memphis_files/email.gif"></span></a><br style="font-family: times new roman,times,serif;">
+</p>
+
+
+</body></html>
